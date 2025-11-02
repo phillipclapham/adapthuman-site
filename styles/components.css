@@ -44,6 +44,7 @@
 .btn-primary:hover {
   background: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
+  color: white;
   box-shadow: var(--shadow-sm);
 }
 
@@ -192,17 +193,26 @@
 }
 
 .theme-icon {
+  display: inline-block;
   font-size: var(--text-lg);
   line-height: 1;
 }
 
 /* Show/hide icons based on theme */
+body:not(.dark-mode) .theme-icon-light {
+  display: inline-block;
+}
+
 body:not(.dark-mode) .theme-icon-dark {
   display: none;
 }
 
 body.dark-mode .theme-icon-light {
   display: none;
+}
+
+body.dark-mode .theme-icon-dark {
+  display: inline-block;
 }
 
 
