@@ -1,0 +1,779 @@
+/* Components - Adaptive Human
+ *
+ * UI components: buttons, cards, badges, navigation, etc.
+ * Built on tokens.css foundation.
+ */
+
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--line-tight);
+  text-decoration: none;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-all-fast);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Primary button - Teal accent */
+.btn-primary {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secondary button - Purple accent */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+.btn-secondary:hover {
+  background: var(--color-purple-faint);
+  border-color: var(--color-purple-hover);
+  color: var(--color-purple-hover);
+}
+
+/* Link-style button */
+.btn-link {
+  background: transparent;
+  color: var(--color-accent);
+  border: none;
+  padding: var(--space-2) 0;
+  font-weight: var(--font-medium);
+}
+
+.btn-link:hover {
+  color: var(--color-accent-hover);
+  transform: translateX(2px);
+  box-shadow: none;
+}
+
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.badge-status {
+  background: var(--color-accent-faint);
+  color: var(--color-accent);
+  border: var(--border-width) solid var(--color-accent);
+}
+
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+.link-external {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+  transition: var(--transition-all-fast);
+}
+
+.link-external:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: var(--bg-secondary);
+  border-bottom: var(--border-width) solid var(--border-light);
+  backdrop-filter: blur(8px);
+}
+
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-all-fast);
+}
+
+.logo:hover {
+  color: var(--color-accent);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.nav-link {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-all-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-lg);
+  height: var(--size-lg);
+  padding: 0;
+  background: transparent;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-all-fast);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-hover);
+  border-color: var(--color-accent);
+}
+
+.theme-icon {
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+/* Show/hide icons based on theme */
+body:not(.dark-mode) .theme-icon-dark {
+  display: none;
+}
+
+body.dark-mode .theme-icon-light {
+  display: none;
+}
+
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.section {
+  padding: var(--space-20) 0;
+  border-bottom: var(--border-width) solid var(--border-light);
+  position: relative;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+/* Kintsugi "seam" - subtle gold line between sections */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold) 20%,
+    var(--color-gold) 80%,
+    transparent 100%
+  );
+  opacity: 0.4;
+}
+
+.section:last-of-type::after {
+  display: none;
+}
+
+.section-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-8);
+  color: var(--text-primary);
+  /* Subtle gold underline for kintsugi touch */
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-gold);
+  display: inline-block;
+}
+
+.section-intro {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: var(--line-relaxed);
+}
+
+.section-content {
+  margin-bottom: var(--space-8);
+}
+
+.section-content:last-child {
+  margin-bottom: 0;
+}
+
+.section-content h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+.section-content h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+}
+
+.section-content p {
+  margin-bottom: var(--space-4);
+}
+
+.section-content ul,
+.section-content ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.section-content li {
+  margin-bottom: var(--space-2);
+}
+
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  padding: var(--space-24) 0 var(--space-16) 0;
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 0 var(--space-12) 0;
+  /* Asymmetric offset - left-aligned with subtle offset */
+  padding-left: var(--space-8);
+}
+
+.hero-name {
+  font-size: var(--text-6xl);
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--space-4);
+  /* Subtle gold gradient for kintsugi touch */
+  background: linear-gradient(
+    135deg,
+    var(--text-primary) 0%,
+    var(--text-primary) 70%,
+    var(--color-gold) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: var(--tracking-tight);
+}
+
+.hero-tagline {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-normal);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  line-height: var(--line-relaxed);
+}
+
+.hero-philosophy {
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: var(--space-8);
+  font-weight: var(--font-medium);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero-hook {
+  max-width: 600px;
+  margin: 0 0 0 var(--space-8);
+  font-size: var(--text-lg);
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+
+/* ============================================
+   PAGE HERO (for content pages like PLAY)
+   ============================================ */
+
+.page-hero {
+  padding: var(--space-16) 0 var(--space-12) 0;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
+  border-bottom: var(--border-width) solid var(--border-light);
+}
+
+.page-hero h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+}
+
+.page-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-tertiary);
+  font-weight: var(--font-medium);
+}
+
+
+/* ============================================
+   PAGE CONTENT (for long-form pages)
+   ============================================ */
+
+.page-content {
+  padding: var(--space-16) 0;
+}
+
+.content-section {
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-16);
+  border-bottom: var(--border-width) solid var(--border-light);
+}
+
+.content-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.content-section h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-6);
+  color: var(--text-primary);
+}
+
+.content-section h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-8);
+  color: var(--text-primary);
+}
+
+.content-section h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+  margin-top: var(--space-6);
+  color: var(--text-primary);
+}
+
+.content-section p {
+  margin-bottom: var(--space-4);
+  line-height: var(--line-relaxed);
+}
+
+.content-section ul,
+.content-section ol {
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-6);
+}
+
+.content-section li {
+  margin-bottom: var(--space-2);
+  line-height: var(--line-relaxed);
+}
+
+.content-section li ul,
+.content-section li ol {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.content-section pre {
+  background: var(--bg-tertiary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--space-6);
+  border: var(--border-width) solid var(--border-color);
+}
+
+.content-section code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.highlight-quote {
+  font-size: var(--text-2xl);
+  font-style: italic;
+  color: var(--color-gold);
+  text-align: center;
+  margin: var(--space-8) 0;
+  font-weight: var(--font-medium);
+}
+
+.footer-note {
+  font-size: var(--text-md);
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-top: var(--space-6);
+}
+
+.section-cta {
+  text-align: center;
+  padding-top: var(--space-12);
+  border-top: var(--border-width) solid var(--border-light);
+}
+
+
+/* ============================================
+   WORK PRINCIPLES (How I Work section)
+   ============================================ */
+
+.work-principles {
+  display: grid;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.principle {
+  padding: var(--space-6);
+  background: var(--bg-secondary);
+  border: var(--border-width) solid var(--border-light);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-all-normal);
+}
+
+.principle:hover {
+  border-color: var(--color-accent);
+  border-left-color: var(--color-gold-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.principle h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+}
+
+.principle p {
+  margin-bottom: var(--space-3);
+}
+
+.principle ul,
+.principle ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.principle li {
+  margin-bottom: var(--space-2);
+}
+
+
+/* ============================================
+   CTA BOX
+   ============================================ */
+
+.cta-box {
+  padding: var(--space-8);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-faint) 0%,
+    var(--color-purple-faint) 100%
+  );
+  border: var(--border-width-thick) solid var(--color-accent);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.cta-box h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+.cta-box p {
+  margin-bottom: var(--space-4);
+  line-height: var(--line-relaxed);
+}
+
+.cta-box p:last-of-type {
+  margin-bottom: var(--space-6);
+}
+
+
+/* ============================================
+   PRODUCTS GRID
+   ============================================ */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+}
+
+.product-card {
+  padding: var(--space-8);
+  background: var(--bg-secondary);
+  border: var(--border-width) solid var(--border-light);
+  border-top: 2px solid var(--color-gold);
+  border-radius: var(--radius-xl);
+  transition: var(--transition-all-normal);
+}
+
+.product-card:hover {
+  border-color: var(--color-accent);
+  border-top-color: var(--color-gold-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  gap: var(--space-4);
+}
+
+.product-header h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+}
+
+.product-description {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  line-height: var(--line-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.product-proof {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-bottom: var(--space-6);
+}
+
+.product-bet {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.product-card .btn {
+  margin-top: var(--space-4);
+}
+
+
+/* ============================================
+   CONNECT SECTION
+   ============================================ */
+
+.connect-links {
+  display: grid;
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.connect-item {
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border: var(--border-width) solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: var(--transition-all-fast);
+}
+
+.connect-item:hover {
+  border-color: var(--color-accent);
+}
+
+.connect-item strong {
+  display: block;
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.connect-description {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-2);
+  margin-bottom: 0;
+}
+
+.connect-footer {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  margin: var(--space-8) 0 var(--space-6) 0;
+}
+
+.connect-tagline {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-gold);
+  margin-top: var(--space-8);
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  padding: var(--space-8) 0;
+  border-top: var(--border-width) solid var(--border-light);
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Hero adjustments */
+  .hero-name {
+    font-size: var(--text-4xl);
+  }
+
+  .hero-tagline {
+    font-size: var(--text-lg);
+  }
+
+  .hero-philosophy {
+    font-size: var(--text-md);
+  }
+
+  .hero-hook {
+    font-size: var(--text-md);
+  }
+
+  /* Reset asymmetry on mobile for better readability */
+  .hero-content {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-hook {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  /* Page hero adjustments */
+  .page-hero h1 {
+    font-size: var(--text-3xl);
+  }
+
+  /* Section title adjustments */
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+
+  /* Products grid - single column on mobile */
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Navigation adjustments */
+  .nav-actions {
+    gap: var(--space-3);
+  }
+
+  /* Button adjustments */
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}

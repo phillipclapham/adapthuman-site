@@ -1,0 +1,172 @@
+/* Main Layout Styles - Adaptive Human
+ *
+ * Container system, page layouts, responsive grid, spacing utilities
+ */
+
+
+/* ============================================
+   CONTAINER SYSTEM
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-md);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .container,
+  .container-narrow {
+    padding: 0 var(--space-4);
+  }
+}
+
+
+/* ============================================
+   PAGE LAYOUT
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+/* ============================================
+   SECTION BACKGROUNDS
+   ============================================ */
+
+/* Alternating section backgrounds for visual rhythm */
+.section-about {
+  background: var(--bg-secondary);
+}
+
+.section-how-i-work {
+  background: var(--bg-primary);
+}
+
+.section-products {
+  background: var(--bg-secondary);
+}
+
+.section-connect {
+  background: var(--bg-primary);
+}
+
+
+/* ============================================
+   RESPONSIVE GRID UTILITIES
+   ============================================ */
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================
+   SPACING UTILITIES
+   ============================================ */
+
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-12 { margin-bottom: var(--space-12); }
+
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mt-12 { margin-top: var(--space-12); }
+
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+/* ============================================
+   RESPONSIVE VISIBILITY
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .theme-toggle,
+  .btn {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}
