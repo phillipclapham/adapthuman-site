@@ -32,10 +32,10 @@
   --color-gold-hover: #B8985A;
   --color-gold-faint: rgba(201, 169, 97, 0.1);
 
-  /* Accent colors - Purple (spectrum connection) */
-  --color-purple: #9333EA;
-  --color-purple-hover: #7E22CE;
-  --color-purple-faint: rgba(147, 51, 234, 0.1);
+  /* Accent colors - Orange (energy, mad scientist) */
+  --color-orange: #E67E22;
+  --color-orange-hover: #D35400;
+  --color-orange-faint: rgba(230, 126, 34, 0.1);
 
   /* Status colors */
   --color-success: #10b981;
@@ -240,10 +240,10 @@ body.dark-mode {
   --color-gold-hover: #E5C158;
   --color-gold-faint: rgba(212, 175, 55, 0.15);
 
-  /* Accent colors - Purple (brighter for dark mode) */
-  --color-purple: #A855F7;
-  --color-purple-hover: #C084FC;
-  --color-purple-faint: rgba(168, 85, 247, 0.15);
+  /* Accent colors - Orange (brighter for dark mode) */
+  --color-orange: #F39C12;
+  --color-orange-hover: #F4B350;
+  --color-orange-faint: rgba(243, 156, 18, 0.15);
 
   /* Status colors (adjusted for dark backgrounds) */
   --color-success: #10b981;
@@ -327,7 +327,7 @@ body.dark-mode {
    COLOR STRATEGY:
    - Teal: Primary brand (PM cohesion)
    - Gold: Kintsugi accent (constraints as features)
-   - Purple: Spectrum connection (phillipclapham.com)
+   - Orange: Energy, mad scientist, secondary actions
 
    These are CAPABILITIES not prescriptions. Visual language
    will emerge through component building. We have the colors

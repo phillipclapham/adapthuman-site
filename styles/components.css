@@ -47,17 +47,17 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* Secondary button - Purple accent */
+/* Secondary button - Orange accent */
 .btn-secondary {
   background: transparent;
-  color: var(--color-purple);
-  border-color: var(--color-purple);
+  color: var(--color-orange);
+  border-color: var(--color-orange);
 }
 
 .btn-secondary:hover {
-  background: var(--color-purple-faint);
-  border-color: var(--color-purple-hover);
-  color: var(--color-purple-hover);
+  background: var(--color-orange-faint);
+  border-color: var(--color-orange-hover);
+  color: var(--color-orange-hover);
 }
 
 /* Link-style button */
@@ -312,9 +312,8 @@ body.dark-mode .theme-icon-light {
 
 .hero-content {
   max-width: 800px;
-  margin: 0 0 var(--space-12) 0;
-  /* Asymmetric offset - left-aligned with subtle offset */
-  padding-left: var(--space-8);
+  margin: 0 auto var(--space-12) auto;
+  text-align: center;
 }
 
 .hero-name {
@@ -353,17 +352,18 @@ body.dark-mode .theme-icon-light {
 .hero-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: var(--space-4);
   flex-wrap: wrap;
 }
 
 .hero-hook {
   max-width: 600px;
-  margin: 0 0 0 var(--space-8);
+  margin: 0 auto;
   font-size: var(--text-lg);
   color: var(--text-tertiary);
   font-style: italic;
+  text-align: center;
 }
 
 
@@ -555,7 +555,7 @@ body.dark-mode .theme-icon-light {
   background: linear-gradient(
     135deg,
     var(--color-accent-faint) 0%,
-    var(--color-purple-faint) 100%
+    var(--color-orange-faint) 100%
   );
   border: var(--border-width-thick) solid var(--color-accent);
   border-radius: var(--radius-xl);

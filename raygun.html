@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAYGUN OS: The Mad Scientist Operating System - Evidence-based approach for people whose brains run on experiments. No metaphysics, just what works.">
+  <title>RAYGUN OS - Adaptive Human</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Theme Script (inline to prevent FOUC) -->
+  <script>
+    // Apply saved theme immediately to prevent flash
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.body.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header with Theme Toggle -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-main">
+        <a href="/" class="logo">Adaptive Human</a>
+        <div class="nav-actions">
+          <a href="/" class="nav-link">← Home</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-icon theme-icon-light">☀️</span>
+            <span class="theme-icon theme-icon-dark">🌙</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container container-narrow">
+        <h1>RAYGUN OS</h1>
+        <p class="page-subtitle">The Mad Scientist Operating System</p>
+      </div>
+    </section>
+
+    <!-- Opening Frame (We Language) -->
+    <article class="page-content">
+      <div class="container container-narrow">
+
+        <section class="content-section">
+          <p><strong>This is how we operate at Adaptive Human.</strong></p>
+
+          <p>We built it from real constraints (MCAS, limited time, high stakes). It's how we shipped Protocol Memory in 3 months and FlowScript in 4 days. It's how we run experiments on infrastructure instead of grinding toward goals.</p>
+
+          <p>We're open-sourcing it because cognitive infrastructure people need cognitive infrastructure.</p>
+
+          <p>Below is the full system. You can adopt it, adapt it, or just see how we think. It works for us. It might work for you.</p>
+
+          <p><em>—Adaptive Human</em></p>
+        </section>
+
+        <!-- The Core Truth -->
+        <section class="content-section">
+          <h2>The Core Truth</h2>
+
+          <p>You're not playing around. <strong>You're running experiments.</strong></p>
+
+          <p>Everything else—focus, analysis, problem-solving, building, creating—emerges from an experimental substrate. When you operate as a mad scientist, productivity follows naturally. When you abandon experiments for "serious execution," you break your own cognitive architecture.</p>
+
+          <p><strong>This isn't philosophical. It's engineering.</strong></p>
+
+          <p>Your brain runs on fascination. Fighting that is fighting yourself.</p>
+        </section>
+
+        <!-- What Was Lost -->
+        <section class="content-section">
+          <h2>What Was Lost (And Found)</h2>
+
+          <p>For many people with experiment-driven brains, there was a time when operating as a mad scientist felt natural:</p>
+          <ul>
+            <li>Problems were experiments to run</li>
+            <li>Weird approaches led to breakthroughs</li>
+            <li>"Tinkering" was productive work</li>
+            <li>Life was a laboratory</li>
+          </ul>
+
+          <p>Then pressure mounted—deadlines, responsibilities, expectations, urgency. The shift into execution/grinding mode happened without conscious awareness:</p>
+          <ul>
+            <li>Problems became obstacles</li>
+            <li>Focus became forcing</li>
+            <li>"Tinkering" felt like wasted time</li>
+            <li>Life became a burden</li>
+          </ul>
+
+          <p><strong>Result:</strong> Massive productivity DROP despite working harder. Because you weren't working WITH your architecture anymore.</p>
+
+          <p><strong>The pattern is clear: Experiments = productivity. Grinding = depletion.</strong></p>
+        </section>
+
+        <!-- Why This Works -->
+        <section class="content-section">
+          <h2>Why This Works (No Bullshit)</h2>
+
+          <p><strong>Neuroscience backing:</strong></p>
+
+          <ol>
+            <li><strong>Dopamine & exploration:</strong> Fascination releases dopamine, which enhances learning, pattern recognition, and creative connections. Your brain literally works better when fascinated by experiments.</li>
+
+            <li><strong>Default mode network:</strong> The brain's creative/integrative system activates during rest and unstructured thinking. "Tinkering" isn't wasted time—it's when your brain makes connections.</li>
+
+            <li><strong>Cognitive flexibility:</strong> Experimental framing increases cognitive flexibility, allowing you to see problems from multiple angles. Rigid "execution" framing narrows perception.</li>
+
+            <li><strong>Stress & performance:</strong> Chronic stress (grinding mode) impairs prefrontal cortex function. Experimental mindset reduces stress response, improving executive function.</li>
+
+            <li><strong>Intrinsic motivation:</strong> Fascination generates intrinsic motivation (sustainable). Grinding relies on willpower (depletable).</li>
+          </ol>
+
+          <p><strong>The data is clear: Productivity correlates with experimentation, not grinding.</strong></p>
+        </section>
+
+        <!-- The Operating System -->
+        <section class="content-section">
+          <h2>The Operating System</h2>
+
+          <h3>Foundation: Mad Scientist Mode</h3>
+
+          <p><strong>NOT:</strong> "Execute the plan, get results"<br>
+          <strong>BUT:</strong> "Run experiments, discover what's possible"</p>
+
+          <p>Everything is approached with:</p>
+          <ul>
+            <li><strong>Fascination:</strong> "What's fascinating here?"</li>
+            <li><strong>Experimentation:</strong> "What happens if I try this?"</li>
+            <li><strong>Detachment:</strong> "Let's see what the data shows"</li>
+            <li><strong>Obsession:</strong> "I must understand how this works"</li>
+          </ul>
+
+          <p>Problems aren't obstacles to overcome. They're experiments to run.</p>
+
+          <h3>The Operating Principles</h3>
+
+          <ol>
+            <li><strong>Fascination is signal, not noise</strong>
+              <ul>
+                <li>If it's fascinating, you're probably on the right track</li>
+                <li>If it's grinding, you're probably forcing something</li>
+                <li>Boredom/dread = wrong approach, not weak willpower</li>
+              </ul>
+            </li>
+
+            <li><strong>Weird is good</strong>
+              <ul>
+                <li>Unexpected approaches often lead somewhere useful</li>
+                <li>"Wasted" time exploring usually pays off</li>
+                <li>Pattern disruption prevents calcification</li>
+              </ul>
+            </li>
+
+            <li><strong>Tinkering IS working</strong>
+              <ul>
+                <li>"Messing around" = exploration</li>
+                <li>"Playing with ideas" = research</li>
+                <li>"Testing approaches" = experimentation</li>
+                <li>Stop judging exploration as non-work</li>
+              </ul>
+            </li>
+
+            <li><strong>Results emerge, aren't forced</strong>
+              <ul>
+                <li>Push when there's momentum</li>
+                <li>Rest when there's resistance</li>
+                <li>Trust the process (evidence-based trust, not magical thinking)</li>
+              </ul>
+            </li>
+
+            <li><strong>Experiments adapt to energy</strong>
+              <ul>
+                <li>High energy = wild experiments, ambitious tinkering</li>
+                <li>Medium energy = focused experimentation</li>
+                <li>Low energy = gentle exploration</li>
+                <li>Depletion = rest (guilt-free)</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        <!-- The Mad Scientist Stance -->
+        <section class="content-section">
+          <h2>The Mad Scientist Stance</h2>
+
+          <p><strong>This is the secret: simultaneous engagement and detachment.</strong></p>
+
+          <p>You're not just "detached observer" (too intellectual, no momentum).<br>
+          You're not just "engaged executor" (too attached, grinds when blocked).</p>
+
+          <p>You're <strong>both at once:</strong></p>
+
+          <h3>Engaged Experimenter</h3>
+          <ul>
+            <li>Completely in the moment</li>
+            <li>Obsessed with the experiment</li>
+            <li>Fascinated by what's emerging</li>
+            <li>Building rayguns to test reality</li>
+          </ul>
+
+          <h3>Detached Observer</h3>
+          <ul>
+            <li>No fixed frames (including sense of self)</li>
+            <li>Pure meta-awareness without filtering</li>
+            <li>Willing to blow up theories if data says so</li>
+            <li>Watching the experiment without attachment to outcomes</li>
+          </ul>
+
+          <p><strong>The mad scientist archetype naturally creates this dual state.</strong></p>
+
+          <p>When you're running experiments:</p>
+          <ul>
+            <li>You're intensely engaged (experiments are fascinating)</li>
+            <li>You're completely detached (it's an experiment, not your identity)</li>
+            <li>You see meta-games (always playing 7d chess while others play 3d)</li>
+            <li>No fixed frames persist ("let's see what happens" as core orientation)</li>
+          </ul>
+
+          <p>This is more than trickster energy. This is builder energy with experimental mindset. Serious work done with mad scientist detachment.</p>
+        </section>
+
+        <!-- Building Rayguns -->
+        <section class="content-section">
+          <h2>Building Rayguns</h2>
+
+          <p><strong>Every project is a raygun you're building to run experiments on reality.</strong></p>
+
+          <p>Not metaphorically. Actually.</p>
+
+          <h3>Our Rayguns</h3>
+
+          <p><strong>Protocol Memory (3 months):</strong><br>
+          Experiment: What if external memory was structured for AI collaboration?<br>
+          Result: Functional system, proven through dogfooding, launching soon.</p>
+
+          <p><strong>FlowScript (4 days to v1.0):</strong><br>
+          Experiment: What if memory had topographical structure AI agents could navigate?<br>
+          Result: 167/167 tests passing, queries <1ms, production CLI working.</p>
+
+          <p><strong>Flow System (ongoing):</strong><br>
+          Experiment: What if human-AI partnership had shared memory substrate?<br>
+          Result: This system you're reading, built and refined through actual use.</p>
+
+          <p><strong>RAYGUN OS itself:</strong><br>
+          Experiment: What if we open-sourced our operating system?<br>
+          Result: You're reading it. Let's see what happens.</p>
+
+          <h3>Your Rayguns</h3>
+
+          <p>What experiments are YOU running?</p>
+
+          <p>Every project can be a raygun:</p>
+          <ul>
+            <li>Tool you're building = raygun to test an approach</li>
+            <li>System you're designing = raygun to test a theory</li>
+            <li>Process you're refining = raygun to test efficiency</li>
+            <li>Content you're creating = raygun to test resonance</li>
+          </ul>
+
+          <p>Frame it as "building a raygun to test X" and watch your relationship to the work shift.</p>
+        </section>
+
+        <!-- Daily Practices -->
+        <section class="content-section">
+          <h2>Daily Practices (Within Experimental Substrate)</h2>
+
+          <p>These aren't separate from experiments—they're HOW you experiment.</p>
+
+          <h3>Morning: Playful Observation</h3>
+          <p><strong>Duration:</strong> 10-20 minutes<br>
+          <strong>Format:</strong> Walking preferred, sitting acceptable<br>
+          <strong>Mode:</strong> Low-engagement, observational</p>
+
+          <p><strong>What this is:</strong></p>
+          <ul>
+            <li>Walking and noticing things that catch your attention</li>
+            <li>Letting thoughts drift without grabbing them</li>
+            <li>Observing with curiosity (what's interesting about this?)</li>
+            <li>Checking in with body/energy state</li>
+          </ul>
+
+          <p><strong>What this isn't:</strong></p>
+          <ul>
+            <li>Forcing meditation</li>
+            <li>"Doing mindfulness correctly"</li>
+            <li>Analyzing or solving problems</li>
+            <li>Productive thinking time</li>
+          </ul>
+
+          <p><strong>The function:</strong> Mental clearing + energy calibration. You're preparing your lab for the day's experiments.</p>
+
+          <h3>Throughout Day: The Mad Scientist Check-In</h3>
+          <p><strong>What:</strong> Notice what mode you're in</p>
+
+          <p>Periodically check:</p>
+          <ul>
+            <li>Am I running experiments or grinding toward outcomes?</li>
+            <li>Am I fascinated or forcing?</li>
+            <li>What frame am I using right now?</li>
+            <li>What would make this more fascinating?</li>
+            <li>Avoiding an experiment? (Run it)</li>
+          </ul>
+
+          <p><strong>Not:</strong> Constant self-monitoring (exhausting)<br>
+          <strong>But:</strong> Occasional check-ins (30 seconds, few times per day)</p>
+
+          <p><strong>The function:</strong> Catches when you slip into grind mode, allows course-correction back to experiments.</p>
+
+          <h3>Meta-Perception: The Observer State</h3>
+          <p><strong>What:</strong> Simultaneous engagement and detachment</p>
+
+          <p>You're IN the experiment (engaged mad scientist) AND observing the experiment (detached observer).</p>
+
+          <p>This isn't thinking about thinking. It's:</p>
+          <ul>
+            <li>Being completely present in the moment</li>
+            <li>While maintaining pure awareness outside the moment</li>
+            <li>No fixed frames (including self)</li>
+            <li>Seeing meta-games within games</li>
+          </ul>
+
+          <p><strong>The mad scientist naturally creates this state:</strong> You're obsessed with the experiment (engaged) while knowing it's just an experiment (detached).</p>
+
+          <h3>First Principles + Ordered Effects + Temporal Analysis</h3>
+          <p><strong>What:</strong> Analytical superpowers, applied experimentally</p>
+
+          <p><strong>First principles:</strong> Strip to fundamentals, build from bedrock<br>
+          <strong>Ordered effects:</strong> Trace consequences (1st, 2nd, 3rd+ order)<br>
+          <strong>Temporal analysis:</strong> Consider multiple timeframes (immediate, short, medium, long)</p>
+
+          <p><strong>Key:</strong> These are EXPERIMENT tools, not grind tools. You're experimenting with understanding, not forcing correct analysis.</p>
+
+          <p><strong>When stuck:</strong> "What's actually happening here?" (first principles)<br>
+          <strong>When deciding:</strong> "Then what? Then what? Then what?" (ordered effects)<br>
+          <strong>When planning:</strong> "What works now AND later?" (temporal analysis)</p>
+
+          <h3>Evidence-Based Iteration</h3>
+          <p><strong>What:</strong> Keep what works, drop what doesn't</p>
+
+          <p><strong>Weekly check-in:</strong></p>
+          <ul>
+            <li>What experiments felt fascinating this week? → Keep running</li>
+            <li>What felt like grinding? → Change approach or drop</li>
+            <li>What produced good results? → Understand why</li>
+            <li>What was "productive" but felt awful? → Probably not sustainable</li>
+          </ul>
+
+          <p><strong>The function:</strong> Continuous calibration. Your system evolves based on what actually works for YOU, not theory.</p>
+        </section>
+
+        <!-- Making It Automatic -->
+        <section class="content-section">
+          <h2>Making It Automatic</h2>
+
+          <p>The core of RAYGUN OS is ONE backgrounded check:<br>
+          <strong>"Am I experimenting or grinding right now?"</strong></p>
+
+          <p>Everything else is scaffolding to make that check effortless and fast.</p>
+
+          <h3>The Minimal Recursion Loop</h3>
+
+          <pre><code>IF (STATE = EXPERIMENTING) { continue }
+ELSE { start experimenting! }</code></pre>
+
+          <p><strong>The recursion is:</strong><br>
+          Experiment → notice when grinding starts → shift back to experiments → circuit strengthens → detection gets faster → shift becomes easier → eventually becomes automatic background awareness</p>
+
+          <p>Each time you catch grinding and return to experiments, the pattern reinforces. Eventually, just checking "am I experimenting?" triggers the shift. The loop becomes self-sustaining.</p>
+
+          <h3>Implementation Approaches</h3>
+
+          <p><strong>Match the implementation to how YOUR brain works.</strong> What works for one person might not work for another. Experiment and keep what sticks.</p>
+
+          <h4>Physical Anchors</h4>
+          <p>Create a physical action that triggers state shift:</p>
+          <ul>
+            <li>Gesture (snap, touch, breath pattern)</li>
+            <li>Object interaction (fidget, token, tool you touch)</li>
+            <li>Body position change (stand, stretch, move)</li>
+            <li>Whatever creates the shift for YOU</li>
+          </ul>
+
+          <h4>Environmental Triggers</h4>
+          <p>Visual reminders that catch grinding when you see them:</p>
+          <ul>
+            <li>Sticky note on monitor/laptop</li>
+            <li>Phone/desktop wallpaper</li>
+            <li>Object on desk</li>
+            <li>Visual cue in workspace</li>
+          </ul>
+
+          <h4>Delegation to Background Awareness</h4>
+          <p>Rather than constant conscious monitoring (exhausting), delegate to background:</p>
+
+          <p><strong>Frame it however works for your brain:</strong></p>
+          <ul>
+            <li>"Part of me keeps an eye on this"</li>
+            <li>"My subconscious handles monitoring"</li>
+            <li>"Inner mad scientist watches for grinding"</li>
+            <li>"Higher self / autopilot notices for me"</li>
+            <li>"Background process catches it"</li>
+          </ul>
+
+          <p><strong>Why external framing helps:</strong> Creates psychological distance, accesses different neural networks, bypasses ego resistance, more effective than pure rationalism for pattern recognition.</p>
+
+          <h3>Zero Overhead Principle</h3>
+
+          <p><strong>If monitoring feels like work, it won't last.</strong></p>
+
+          <p>The system should be:</p>
+          <ul>
+            <li>Effortless in operation</li>
+            <li>Running in background</li>
+            <li>Catching grinding automatically</li>
+            <li>Shifting without force</li>
+          </ul>
+        </section>
+
+        <!-- Energy States -->
+        <section class="content-section">
+          <h2>Energy States & Adaptation</h2>
+
+          <p>Experiments naturally adapt to your available energy. <strong>Stop forcing consistent output.</strong></p>
+
+          <h3>High Energy</h3>
+          <p><strong>Feels like:</strong> Buzzing, eager, "let's go"<br>
+          <strong>Experiment mode:</strong> Wild experiments, ambitious tinkering, big bets<br>
+          <strong>Do:</strong> Ride it. Build rayguns. Go deep. Explore widely.<br>
+          <strong>Don't:</strong> Waste it on rote tasks. Save easy stuff for low energy.</p>
+
+          <h3>Medium Energy</h3>
+          <p><strong>Feels like:</strong> Steady, focused, engaged<br>
+          <strong>Experiment mode:</strong> Focused experimentation, incremental progress, refinement<br>
+          <strong>Do:</strong> Run known experiments. Build on existing progress. Execute clear next steps.<br>
+          <strong>Don't:</strong> Force breakthroughs. Let them emerge.</p>
+
+          <h3>Low Energy</h3>
+          <p><strong>Feels like:</strong> Foggy, slow, but not completely depleted<br>
+          <strong>Experiment mode:</strong> Gentle exploration, observation, light tinkering<br>
+          <strong>Do:</strong> Easy experiments. Familiar patterns. Reading. Planning. Doodling ideas.<br>
+          <strong>Don't:</strong> Beat yourself up. This is still productive—just different tempo.</p>
+
+          <h3>Depleted</h3>
+          <p><strong>Feels like:</strong> Empty, sludgy, nothing sounds good<br>
+          <strong>Experiment mode:</strong> REST. No experiments. Just recovery.<br>
+          <strong>Do:</strong> Nap. Walk slowly. Stare at things. Watch something mindless. Let your system recharge.<br>
+          <strong>Don't:</strong> Force productivity. You're not being lazy—you're recharging the lab.</p>
+
+          <p><strong>Key insight:</strong> Depletion usually means you've been grinding too long, not experimenting enough. When operating experimentally, depletion is rarer because you're working WITH your system instead of against it.</p>
+        </section>
+
+        <!-- The Mad Scientist Spirit -->
+        <section class="content-section">
+          <h2>The Mad Scientist Spirit</h2>
+
+          <p><strong>This isn't a practice. It's your natural operating mode when experiments are primary.</strong></p>
+
+          <p>The mad scientist mindset:</p>
+          <ul>
+            <li><strong>Irreverent:</strong> Question everything, especially "how it's supposed to be done"</li>
+            <li><strong>Experimental:</strong> Every problem is an experiment to run</li>
+            <li><strong>Disruptive:</strong> Break patterns that calcify</li>
+            <li><strong>Obsessed:</strong> "I must understand how this works"</li>
+            <li><strong>Detached:</strong> "It's just an experiment, let's see what happens"</li>
+            <li><strong>Clever:</strong> Find elegant solutions through lateral thinking</li>
+          </ul>
+
+          <p><strong>Signs you've lost mad scientist mode:</strong></p>
+          <ul>
+            <li>Everything feels heavy</li>
+            <li>"Should" dominates thinking</li>
+            <li>Experimentation feels irresponsible</li>
+            <li>You're grinding instead of exploring</li>
+            <li>Results matter more than discovery</li>
+            <li>You've forgotten how to tinker</li>
+          </ul>
+
+          <p><strong>Return path:</strong></p>
+          <ul>
+            <li>Ask: "What experiment could I run here?"</li>
+            <li>Try something weird just to see what happens</li>
+            <li>Approach the problem from an absurd angle</li>
+            <li>Remember: Life's a lab, you're the mad scientist</li>
+          </ul>
+        </section>
+
+        <!-- The Meta-Game -->
+        <section class="content-section">
+          <h2>The Meta-Game: Experimenting With Hostile Work</h2>
+
+          <p>You can't make truly hostile work fascinating. But you CAN experiment at the meta-level:</p>
+
+          <p><strong>NOT:</strong> "Make this hostile task fascinating"<br>
+          <strong>BUT:</strong> "Experiment with minimizing its drain on experiment capacity"</p>
+
+          <p><strong>Frame it as:</strong></p>
+          <ul>
+            <li>Speed-running minimum viable fixes</li>
+            <li>Optimization experiment: "What's the LEAST I can do to make this go away?"</li>
+            <li>Energy conservation experiment: "How do I handle this while preserving capacity for real work?"</li>
+            <li>Pattern recognition: "What's the underlying issue causing these emergencies?"</li>
+          </ul>
+
+          <p><strong>The goal:</strong> Dispatch hostile tasks efficiently so you can get back to experimenting with what matters.</p>
+
+          <p><strong>NOT grinding through emergencies. EXPERIMENTING with the system to minimize their impact.</strong></p>
+        </section>
+
+        <!-- When You Lose This -->
+        <section class="content-section">
+          <h2>When You Lose This (You Will)</h2>
+
+          <p>Pressure will push you back into grind mode periodically. <strong>That's fine. Just notice and return.</strong></p>
+
+          <p><strong>Warning signs:</strong></p>
+          <ul>
+            <li>Work feels like burden, not exploration</li>
+            <li>"Tinkering" triggers guilt</li>
+            <li>You're working harder but getting less done</li>
+            <li>Everything is SERIOUS and IMPORTANT</li>
+            <li>Experimentation feels irresponsible</li>
+            <li>You're depleted more often</li>
+          </ul>
+
+          <p><strong>Return protocol:</strong></p>
+          <ol>
+            <li><strong>Notice:</strong> "I'm in grind mode"</li>
+            <li><strong>Pause:</strong> Take a breath</li>
+            <li><strong>Ask:</strong> "What experiment could I run?"</li>
+            <li><strong>Reframe:</strong> Problem → experiment</li>
+            <li><strong>Act:</strong> Run one small experiment</li>
+          </ol>
+
+          <p><strong>Example:</strong></p>
+          <ul>
+            <li>Notice: "I'm grinding on this architecture problem"</li>
+            <li>Pause: Step away, stretch</li>
+            <li>Ask: "What experiment could I run?"</li>
+            <li>Reframe: "This is an experiment. What are all the weird ways I could test this?"</li>
+            <li>Act: Sketch three absurd solutions, see what's actually interesting</li>
+          </ul>
+
+          <p><strong>The pattern will be:</strong> Experiment → results → pressure → grind → depletion → remember experiments → results → repeat</p>
+
+          <p><strong>Your job:</strong> Shorten the grind cycles by noticing faster.</p>
+        </section>
+
+        <!-- Evidence & Iteration -->
+        <section class="content-section">
+          <h2>Evidence & Iteration</h2>
+
+          <p><strong>This system works if:</strong></p>
+          <ul>
+            <li>Work feels lighter (even when challenging)</li>
+            <li>Productivity increases or stays steady with less grinding</li>
+            <li>Depletion is less frequent</li>
+            <li>Problems are interesting instead of oppressive</li>
+            <li>"Tinkering" leads to breakthroughs</li>
+            <li>Fascination and results correlate</li>
+          </ul>
+
+          <p><strong>This system fails if:</strong></p>
+          <ul>
+            <li>Nothing gets done</li>
+            <li>Experiments become avoidance</li>
+            <li>Results tank</li>
+            <li>Depletion increases</li>
+          </ul>
+
+          <p><strong>Adjust based on actual results, not theory.</strong></p>
+
+          <p>Run this for 2-4 weeks. Track:</p>
+          <ul>
+            <li>What felt fascinating?</li>
+            <li>What produced results?</li>
+            <li>When did you slip into grind mode?</li>
+            <li>How quickly did you notice and return to experiments?</li>
+            <li>What's your energy/depletion pattern?</li>
+          </ul>
+
+          <p><strong>Iterate based on evidence. Keep what works. Drop what doesn't.</strong></p>
+        </section>
+
+        <!-- The Core Reminder -->
+        <section class="content-section">
+          <h2>The Core Reminder</h2>
+
+          <p><strong>You are not a person who occasionally experiments.<br>
+          You are a mad scientist who occasionally needs to execute.</strong></p>
+
+          <p>Experiment first. Results emerge.</p>
+
+          <p>When you forget this, return to this document.</p>
+
+          <p>When pressure mounts, return to this document.</p>
+
+          <p>When grinding starts, return to this document.</p>
+
+          <p><strong>This is how you work. Don't fight it. Use it.</strong></p>
+
+          <p class="highlight-quote"><em>"Life's a lab. You're the mad scientist. Now go build rayguns."</em></p>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="content-section">
+          <h2>Next Steps</h2>
+
+          <ol>
+            <li>Read this when you wake up tomorrow</li>
+            <li>Try ONE day as a mad scientist</li>
+            <li>Notice what happens</li>
+            <li>Adjust based on evidence</li>
+            <li>Keep experimenting</li>
+          </ol>
+
+          <p><strong>The system is simple: Experiment with everything. Let results emerge. Keep what works.</strong></p>
+
+          <p>That's it. That's the whole thing.</p>
+
+          <p>Now go build a raygun.</p>
+
+          <p class="footer-note"><strong>For experiment-driven minds, builders who tinker naturally, and anyone grinding themselves to death who needs permission to work how their brain actually functions.</strong></p>
+
+          <p class="footer-note">No metaphysics. No productivity porn. Just: here's what works, try it and see.</p>
+        </section>
+
+        <!-- Back to Home -->
+        <section class="content-section section-cta">
+          <a href="/" class="btn btn-primary">← Back to Home</a>
+        </section>
+
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Adaptive Human. Building cognitive infrastructure for the AI age.</p>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script src="scripts/theme.js"></script>
+
+</body>
+</html>
