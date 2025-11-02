@@ -1,0 +1,352 @@
+/* Design System Tokens - Adaptive Human
+ *
+ * Foundation adapted from Protocol Memory design system.
+ * Extends PM's proven structure with Adaptive Human's visual identity:
+ * - Teal (primary, from PM for ecosystem cohesion)
+ * - Gold (accent, kintsugi philosophy - constraints as features)
+ * - Purple (accent, spectrum connection to phillipclapham.com)
+ *
+ * Philosophy: These tokens provide capabilities, not mandates.
+ * Visual language will emerge through component building.
+ */
+
+/* ============================================
+   ROOT VARIABLES (Light Mode Default)
+   ============================================ */
+
+:root {
+  /* ==================== COLORS ==================== */
+
+  /* Primary text colors */
+  --color-primary: #111;
+  --color-secondary: #555;
+  --color-tertiary: #9ca3af;
+
+  /* Accent colors - Teal (PM cohesion) */
+  --color-accent: #006b6d;
+  --color-accent-hover: #008c8f;
+  --color-accent-faint: rgba(0, 107, 109, 0.1);
+
+  /* Accent colors - Gold (kintsugi) */
+  --color-gold: #C9A961;
+  --color-gold-hover: #B8985A;
+  --color-gold-faint: rgba(201, 169, 97, 0.1);
+
+  /* Accent colors - Purple (spectrum connection) */
+  --color-purple: #9333EA;
+  --color-purple-hover: #7E22CE;
+  --color-purple-faint: rgba(147, 51, 234, 0.1);
+
+  /* Status colors */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
+
+  /* Background colors */
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f3f4f6;
+  --bg-hover: #f9fafb;
+
+  /* Text colors */
+  --text-primary: #111;
+  --text-secondary: #555;
+  --text-tertiary: #9ca3af;
+  --text-muted: #6b7280;
+
+  /* Border colors */
+  --border-color: #d1d5db;
+  --border-light: #e5e7eb;
+  --border-dark: #9ca3af;
+  --border-focus: #006b6d;
+
+  /* Special colors */
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --overlay-light: rgba(0, 0, 0, 0.5);
+
+  /* ==================== SPACING ==================== */
+  /* 4px base scale - proven in PM */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ==================== TYPOGRAPHY ==================== */
+
+  /* Font families - Match PM for ecosystem cohesion */
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Source Code Pro', 'Monaco', 'Courier New', monospace;
+
+  /* Font sizes */
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 28px;
+  --text-4xl: 32px;
+  --text-5xl: 36px;
+  --text-6xl: 48px;
+  --text-7xl: 60px;
+
+  /* Font weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line heights */
+  --line-tight: 1.25;
+  --line-snug: 1.375;
+  --line-normal: 1.5;
+  --line-relaxed: 1.6;
+  --line-loose: 1.75;
+
+  /* Letter spacing */
+  --tracking-tight: -0.6px;
+  --tracking-normal: 0px;
+  --tracking-wide: 0.4px;
+  --tracking-wider: 0.6px;
+  --tracking-widest: 0.8px;
+
+  /* ==================== BORDERS ==================== */
+
+  --radius-sm: 3px;
+  --radius-base: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  --border-width-thicker: 3px;
+
+  /* ==================== SHADOWS ==================== */
+  /* Light mode shadows */
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* Focus shadows - teal accent */
+  --shadow-focus: 0 0 0 2px rgba(0, 107, 109, 0.15);
+  --shadow-focus-ring: 0 0 0 3px rgba(0, 107, 109, 0.05);
+
+  /* ==================== TRANSITIONS ==================== */
+
+  /* Duration */
+  --transition-fast: 150ms;
+  --transition-normal: 200ms;
+  --transition-medium: 250ms;
+  --transition-slow: 300ms;
+  --transition-slower: 400ms;
+
+  /* Timing functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-default: ease;
+
+  /* Combined transitions */
+  --transition-all-fast: all 150ms ease;
+  --transition-all-normal: all 200ms ease;
+  --transition-all-medium: all 250ms ease;
+  --transition-all-slow: all 300ms ease;
+
+  /* ==================== Z-INDEX ==================== */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 500;
+  --z-overlay: 1000;
+  --z-modal: 10000;
+  --z-modal-nested: 10001;
+  --z-toast: 10002;
+  --z-tooltip: 10003;
+
+  /* ==================== LAYOUT ==================== */
+
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 960px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+
+  /* Common sizes */
+  --size-xs: 16px;
+  --size-sm: 20px;
+  --size-base: 24px;
+  --size-md: 28px;
+  --size-lg: 32px;
+  --size-xl: 36px;
+  --size-2xl: 40px;
+
+  /* Input/form heights */
+  --input-height-sm: 32px;
+  --input-height-base: 40px;
+  --input-height-lg: 48px;
+
+  /* ==================== OPACITY ==================== */
+
+  --opacity-disabled: 0.5;
+  --opacity-hover: 0.8;
+  --opacity-muted: 0.6;
+}
+
+
+/* ============================================
+   DARK MODE OVERRIDES
+   ============================================ */
+
+body.dark-mode {
+  /* ==================== COLORS ==================== */
+
+  /* Primary text colors */
+  --color-primary: #f9fafb;
+  --color-secondary: #d1d5db;
+  --color-tertiary: #6b7280;
+
+  /* Accent colors - Teal (brighter for dark mode) */
+  --color-accent: #00a8ab;
+  --color-accent-hover: #00c5c9;
+  --color-accent-faint: rgba(0, 168, 171, 0.15);
+
+  /* Accent colors - Gold (brighter for dark mode) */
+  --color-gold: #D4AF37;
+  --color-gold-hover: #E5C158;
+  --color-gold-faint: rgba(212, 175, 55, 0.15);
+
+  /* Accent colors - Purple (brighter for dark mode) */
+  --color-purple: #A855F7;
+  --color-purple-hover: #C084FC;
+  --color-purple-faint: rgba(168, 85, 247, 0.15);
+
+  /* Status colors (adjusted for dark backgrounds) */
+  --color-success: #10b981;
+  --color-error: #f87171;
+  --color-warning: #fbbf24;
+  --color-info: #60a5fa;
+
+  /* Background colors */
+  --bg-primary: #0f1117;
+  --bg-secondary: #1a1d29;
+  --bg-tertiary: #25293a;
+  --bg-hover: #2d3142;
+
+  /* Text colors */
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --text-muted: #6b7280;
+
+  /* Border colors */
+  --border-color: #374151;
+  --border-light: #4b5563;
+  --border-dark: #1f2937;
+  --border-focus: #00a8ab;
+
+  /* Special colors */
+  --overlay-bg: rgba(0, 0, 0, 0.8);
+  --overlay-light: rgba(0, 0, 0, 0.6);
+
+  /* ==================== SHADOWS (DARK MODE) ==================== */
+  /* More pronounced shadows for depth in dark mode */
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.7);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.8);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  /* Focus shadows for dark mode */
+  --shadow-focus: 0 0 0 2px rgba(0, 168, 171, 0.3);
+  --shadow-focus-ring: 0 0 0 3px rgba(0, 168, 171, 0.15);
+}
+
+
+/* ============================================
+   ACCESSIBILITY: REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* Override all transitions to be nearly instant */
+    --transition-fast: 1ms;
+    --transition-normal: 1ms;
+    --transition-medium: 1ms;
+    --transition-slow: 1ms;
+    --transition-slower: 1ms;
+
+    --transition-all-fast: all 1ms ease;
+    --transition-all-normal: all 1ms ease;
+    --transition-all-medium: all 1ms ease;
+    --transition-all-slow: all 1ms ease;
+  }
+
+  /* Disable all animations and transitions for users who prefer reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+
+/* ============================================
+   DESIGN NOTES
+   ============================================
+
+   COLOR STRATEGY:
+   - Teal: Primary brand (PM cohesion)
+   - Gold: Kintsugi accent (constraints as features)
+   - Purple: Spectrum connection (phillipclapham.com)
+
+   These are CAPABILITIES not prescriptions. Visual language
+   will emerge through component building. We have the colors
+   available - how we use them (gradient seams, highlights,
+   interactive states, etc) will be discovered in practice.
+
+   SPACING SCALE:
+   4px base - proven in PM, works well for precision
+
+   TYPOGRAPHY:
+   Matching PM fonts for ecosystem cohesion:
+   - Plus Jakarta Sans: Humanist, readable body
+   - Syne: Geometric, modern headings
+   - Source Code Pro: Technical, monospace
+
+   Can differentiate later if needed, but cohesion first.
+
+   DARK MODE:
+   First-class, not afterthought. Brighter accents for contrast.
+   More pronounced shadows for depth cues.
+
+   ============================================ */

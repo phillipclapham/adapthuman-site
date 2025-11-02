@@ -1,0 +1,429 @@
+/* Base Styles - Adaptive Human
+ *
+ * Typography, layout foundation, and theme infrastructure.
+ * Designed for landing page content (not app interface).
+ */
+
+/* ============================================
+   FONT IMPORTS
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Syne:wght@400..800&display=swap');
+
+
+/* ============================================
+   UNIVERSAL RESET
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ============================================
+   ROOT & BODY SETUP
+   ============================================ */
+
+html {
+  /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
+/* Disable smooth scroll for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  /* Background and text colors from tokens */
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+  /* Typography */
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--line-relaxed);
+  letter-spacing: var(--tracking-normal);
+
+  /* Smooth theme transitions */
+  transition: background-color var(--transition-medium),
+              color var(--transition-medium);
+
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+
+  /* Better font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* ============================================
+   TYPOGRAPHY BASELINE
+   ============================================ */
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  line-height: var(--line-tight);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-6);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-5);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-4);
+}
+
+h5 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+h6 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-semibold);
+}
+
+/* Body text */
+
+p {
+  margin-bottom: var(--space-5);
+  color: var(--text-secondary);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Text emphasis */
+
+strong, b {
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--text-sm);
+}
+
+/* Links */
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: var(--transition-all-fast);
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+a:focus-visible {
+  outline: var(--border-width-thick) solid var(--border-focus);
+  outline-offset: var(--space-1);
+  border-radius: var(--radius-sm);
+}
+
+/* Lists */
+
+ul, ol {
+  margin-bottom: var(--space-5);
+  padding-left: var(--space-6);
+  color: var(--text-secondary);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline code */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-tertiary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  border: var(--border-width) solid var(--border-light);
+}
+
+/* Code blocks */
+
+pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background: var(--bg-tertiary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--space-5);
+  border: var(--border-width) solid var(--border-color);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  color: var(--text-primary);
+}
+
+/* Blockquotes */
+
+blockquote {
+  border-left: var(--border-width-thicker) solid var(--color-accent);
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-5);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+blockquote p {
+  margin-bottom: var(--space-3);
+}
+
+/* Horizontal rule */
+
+hr {
+  border: none;
+  border-top: var(--border-width) solid var(--border-color);
+  margin: var(--space-12) 0;
+}
+
+
+/* ============================================
+   SELECTION STYLING
+   ============================================ */
+
+::selection {
+  background: var(--color-accent-faint);
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: var(--color-accent-faint);
+  color: var(--text-primary);
+}
+
+
+/* ============================================
+   SCROLLBAR STYLING (WEBKIT)
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-dark);
+}
+
+
+/* ============================================
+   THEME TRANSITION SMOOTHING
+   ============================================ */
+
+/* Apply smooth transitions to all elements that change with theme */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: var(--transition-medium);
+  transition-timing-function: var(--ease-in-out);
+}
+
+/* Preserve other transitions */
+a,
+button,
+input,
+textarea,
+select {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, transform, box-shadow;
+}
+
+
+/* ============================================
+   FOCUS VISIBLE SUPPORT
+   ============================================ */
+
+/* Remove default focus outline, rely on focus-visible */
+*:focus {
+  outline: none;
+}
+
+/* Apply visible focus styles for keyboard navigation */
+*:focus-visible {
+  outline: var(--border-width-thick) solid var(--border-focus);
+  outline-offset: var(--space-1);
+}
+
+
+/* ============================================
+   IMAGE & MEDIA DEFAULTS
+   ============================================ */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  /* Prevent alt text from causing layout shift */
+  font-style: italic;
+}
+
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  z-index: var(--z-modal);
+  transform: translateY(-200%);
+  transition: transform var(--transition-normal);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+}
+
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+/* Slightly larger base font on larger screens */
+@media (min-width: 768px) {
+  body {
+    font-size: var(--text-md);
+  }
+
+  h1 {
+    font-size: var(--text-6xl);
+  }
+
+  h2 {
+    font-size: var(--text-5xl);
+  }
+
+  h3 {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: var(--text-7xl);
+  }
+
+  h2 {
+    font-size: var(--text-6xl);
+  }
+}
+
+
+/* ============================================
+   DESIGN NOTES
+   ============================================
+
+   TYPOGRAPHY APPROACH:
+   Landing page focused - generous spacing, clear hierarchy.
+   Headings use Syne (geometric, modern), body uses Plus Jakarta Sans
+   (humanist, readable), code uses Source Code Pro.
+
+   THEME TRANSITIONS:
+   Smooth transitions on theme change for professional feel.
+   All color properties transition together.
+
+   ACCESSIBILITY:
+   - Reduced motion support
+   - Focus-visible for keyboard navigation
+   - Skip to content link
+   - Semantic HTML support
+
+   RESPONSIVE:
+   Base font scales up on larger screens for better readability.
+   Heading sizes grow for more dramatic hierarchy on desktop.
+
+   ============================================ */

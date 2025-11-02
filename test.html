@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System Test - Adaptive Human</title>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+
+  <style>
+    /* Test page specific styles */
+    .container {
+      max-width: var(--container-lg);
+      margin: 0 auto;
+      padding: var(--space-8);
+    }
+
+    .color-swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      margin: var(--space-2);
+      border-radius: var(--radius-md);
+      border: var(--border-width) solid var(--border-color);
+      background: var(--bg-secondary);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+    }
+
+    .color-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      border: var(--border-width-thick) solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .color-circle.teal { background: var(--color-accent); }
+    .color-circle.gold { background: var(--color-gold); }
+    .color-circle.purple { background: var(--color-purple); }
+
+    .theme-toggle-btn {
+      position: fixed;
+      top: var(--space-6);
+      right: var(--space-6);
+      padding: var(--space-3) var(--space-5);
+      background: var(--color-accent);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-all-normal);
+      z-index: var(--z-sticky);
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .section {
+      margin-bottom: var(--space-12);
+      padding-bottom: var(--space-12);
+      border-bottom: var(--border-width) solid var(--border-color);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .button-demo {
+      display: inline-block;
+      padding: var(--space-3) var(--space-6);
+      margin: var(--space-2);
+      border-radius: var(--radius-md);
+      font-weight: var(--font-medium);
+      cursor: pointer;
+      transition: var(--transition-all-normal);
+      border: var(--border-width) solid transparent;
+    }
+
+    .button-teal {
+      background: var(--color-accent);
+      color: var(--bg-primary);
+    }
+
+    .button-teal:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .button-gold {
+      background: var(--color-gold);
+      color: var(--bg-primary);
+    }
+
+    .button-gold:hover {
+      background: var(--color-gold-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .button-purple {
+      background: var(--color-purple);
+      color: var(--bg-primary);
+    }
+
+    .button-purple:hover {
+      background: var(--color-purple-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle-btn">< Dark Mode</button>
+
+  <div class="container">
+    <h1>Adaptive Human Design System</h1>
+    <p><strong>Foundation Layer Test</strong> - Verifying tokens, typography, and dark mode infrastructure.</p>
+
+    <!-- Typography Section -->
+    <section class="section">
+      <h2>Typography Hierarchy</h2>
+      <p>Testing the full typography scale with our font stack: <strong>Syne</strong> for headings, <strong>Plus Jakarta Sans</strong> for body, and <code>Source Code Pro</code> for code.</p>
+
+      <h1>Heading 1 - The largest</h1>
+      <h2>Heading 2 - Large</h2>
+      <h3>Heading 3 - Medium</h3>
+      <h4>Heading 4 - Smaller</h4>
+      <h5>Heading 5 - Small</h5>
+      <h6>Heading 6 - Smallest</h6>
+
+      <p>This is body text. It should be readable, comfortable, and well-spaced. The line height is generous for better readability. <strong>Bold text</strong> uses semibold weight. <em>Italic text</em> is emphasized. <a href="#">Links are teal</a> and have a nice hover state.</p>
+
+      <blockquote>
+        <p>"Beautifully broken building for beautifully broken"</p>
+        <p>Building cognitive infrastructure for people adapting to the AI age.</p>
+      </blockquote>
+    </section>
+
+    <!-- Color Palette Section -->
+    <section class="section">
+      <h2>Color Palette</h2>
+      <p>Our three accent colors: <strong>Teal</strong> (primary, PM cohesion), <strong>Gold</strong> (kintsugi philosophy), <strong>Purple</strong> (spectrum connection).</p>
+
+      <div style="margin-top: var(--space-6);">
+        <div class="color-swatch">
+          <div class="color-circle teal"></div>
+          <span>Teal - Primary Brand</span>
+        </div>
+
+        <div class="color-swatch">
+          <div class="color-circle gold"></div>
+          <span>Gold - Kintsugi Accent</span>
+        </div>
+
+        <div class="color-swatch">
+          <div class="color-circle purple"></div>
+          <span>Purple - Spectrum Connection</span>
+        </div>
+      </div>
+
+      <p style="margin-top: var(--space-6);">These colors should adapt in dark mode - teal and purple get brighter for contrast, gold becomes more vibrant.</p>
+    </section>
+
+    <!-- Button Demos Section -->
+    <section class="section">
+      <h2>Interactive Elements</h2>
+      <p>Testing our accent colors in interactive contexts:</p>
+
+      <div style="margin-top: var(--space-6);">
+        <button class="button-demo button-teal">Teal Button</button>
+        <button class="button-demo button-gold">Gold Button</button>
+        <button class="button-demo button-purple">Purple Button</button>
+      </div>
+
+      <p style="margin-top: var(--space-6);">Notice smooth transitions on hover and theme changes.</p>
+    </section>
+
+    <!-- Lists Section -->
+    <section class="section">
+      <h2>Lists & Content</h2>
+
+      <h3>Unordered List</h3>
+      <ul>
+        <li>Protocol Memory - AI memory layer</li>
+        <li>FlowScript - Universal memory API for AI agents</li>
+        <li>PLAY OS - Play-first cognitive operating system</li>
+      </ul>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>Build tokens.css (design system foundation)</li>
+        <li>Build base.css (typography and reset)</li>
+        <li>Test dark mode infrastructure</li>
+        <li>Create components and layouts</li>
+      </ol>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="section">
+      <h2>Code Display</h2>
+
+      <p>Inline code: <code>const theme = 'dark';</code></p>
+
+      <p>Code block:</p>
+      <pre><code>// Toggle dark mode
+const toggleTheme = () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', getCurrentTheme());
+};</code></pre>
+    </section>
+
+    <!-- Spacing Test -->
+    <section class="section">
+      <h2>Spacing Scale</h2>
+      <p>Our spacing scale is based on 4px increments, proven in Protocol Memory:</p>
+
+      <div style="margin-top: var(--space-6); font-family: var(--font-mono); font-size: var(--text-sm);">
+        <div style="margin-bottom: var(--space-3);">
+          <div style="height: var(--space-1); width: var(--space-1); background: var(--color-accent); display: inline-block;"></div>
+          space-1 (4px)
+        </div>
+        <div style="margin-bottom: var(--space-3);">
+          <div style="height: var(--space-2); width: var(--space-2); background: var(--color-accent); display: inline-block;"></div>
+          space-2 (8px)
+        </div>
+        <div style="margin-bottom: var(--space-3);">
+          <div style="height: var(--space-4); width: var(--space-4); background: var(--color-accent); display: inline-block;"></div>
+          space-4 (16px)
+        </div>
+        <div style="margin-bottom: var(--space-3);">
+          <div style="height: var(--space-8); width: var(--space-8); background: var(--color-accent); display: inline-block;"></div>
+          space-8 (32px)
+        </div>
+      </div>
+    </section>
+
+    <!-- Test Complete -->
+    <section class="section" style="border-bottom: none;">
+      <h2>Foundation Test Complete</h2>
+      <p><strong>Toggle dark mode using the button in the top right.</strong> All colors, typography, and spacing should transition smoothly.</p>
+
+      <p>If everything looks good, the foundation layer is ready for component building in Conversation 2!</p>
+    </section>
+  </div>
+
+  <!-- Theme toggle script -->
+  <script src="scripts/theme.js"></script>
+</body>
+</html>
