@@ -1,0 +1,218 @@
+/* ============================================
+   FOUNDER SECTION STYLES
+   ============================================ */
+
+/* Hero founder line */
+.hero-founder {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-6);
+  font-weight: var(--font-medium);
+}
+
+.hero-founder a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.hero-founder a:hover {
+  color: var(--color-gold);
+  border-bottom-color: var(--color-gold);
+}
+
+/* Founder section container */
+.section-founder {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 107, 109, 0.03) 0%,
+    rgba(147, 51, 234, 0.02) 100%
+  );
+  border-top: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+  padding: var(--space-20) 0;
+}
+
+.dark-mode .section-founder {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 168, 171, 0.05) 0%,
+    rgba(147, 51, 234, 0.03) 100%
+  );
+}
+
+/* Kintsugi crack border effect */
+.section-founder::before,
+.section-founder::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold) 10%,
+    var(--color-gold) 50%,
+    var(--color-gold) 90%,
+    transparent 100%
+  );
+  opacity: 0.4;
+}
+
+.section-founder::before {
+  top: -1px;
+}
+
+.section-founder::after {
+  bottom: -1px;
+}
+
+/* Founder content layout (asymmetric) */
+.founder-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+  margin-top: var(--space-12);
+}
+
+/* Founder text column */
+.founder-text h3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-2);
+  background: linear-gradient(
+    90deg,
+    var(--text-primary) 0%,
+    var(--text-primary) 70%,
+    var(--color-gold) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.founder-tagline {
+  font-size: var(--text-lg);
+  color: var(--color-gold);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-6);
+  font-style: italic;
+}
+
+.founder-text p {
+  margin-bottom: var(--space-4);
+  line-height: var(--line-relaxed);
+}
+
+.founder-text p:last-of-type {
+  margin-bottom: var(--space-8);
+}
+
+/* Founder links */
+.founder-links {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Founder stats grid */
+.founder-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--color-gold);
+  box-shadow: var(--shadow-md);
+}
+
+/* Individual stat item */
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-value {
+  transform: scale(1.05);
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-top: var(--space-2);
+  font-weight: var(--font-medium);
+}
+
+/* Stat counter animation (JavaScript will add .counting class) */
+.stat-value.counting {
+  animation: statPulse 0.6s ease-out;
+}
+
+@keyframes statPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    color: var(--color-primary);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  /* Stack founder content */
+  .founder-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  /* Adjust text sizing */
+  .founder-text h3 {
+    font-size: var(--text-2xl);
+  }
+
+  .founder-tagline {
+    font-size: var(--text-md);
+  }
+
+  /* Stats grid remains 2x2 on mobile */
+  .founder-stats {
+    padding: var(--space-6);
+    gap: var(--space-6);
+  }
+
+  .stat-value {
+    font-size: var(--text-3xl);
+  }
+
+  .stat-label {
+    font-size: var(--text-xs);
+  }
+
+  /* Links stack on mobile */
+  .founder-links {
+    flex-direction: column;
+  }
+
+  .founder-links .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
