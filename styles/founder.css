@@ -120,59 +120,153 @@
   flex-wrap: wrap;
 }
 
-/* Founder stats grid */
-.founder-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-  padding: var(--space-8);
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  border-left: 3px solid var(--color-gold);
-  box-shadow: var(--shadow-md);
-}
+/* ============================================
+   EVIDENCE BOARD: Topological Principle Network
+   ============================================ */
 
-/* Individual stat item */
-.stat-item {
-  text-align: center;
-}
-
-.stat-value {
-  font-size: var(--text-4xl);
-  font-weight: var(--font-extrabold);
+/* Pull quote styling */
+.pull-quote {
+  font-size: var(--text-xl);
+  font-style: italic;
   color: var(--color-gold);
-  font-family: var(--font-heading);
-  line-height: 1.2;
-  transition: transform 0.3s ease;
+  border-left: 3px solid var(--color-gold);
+  padding-left: var(--space-6);
+  margin: var(--space-8) 0;
+  font-weight: var(--font-semibold);
 }
 
-.stat-item:hover .stat-value {
-  transform: scale(1.05);
+/* Principle board container */
+.principle-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+  padding: var(--space-8);
+  min-height: 600px;
 }
 
-.stat-label {
+/* SVG connections layer (behind cards) */
+.principle-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Individual principle card */
+.principle-card {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* Card rotation variations for organic feel */
+.principle-card:nth-child(2) { transform: rotate(-1deg); }
+.principle-card:nth-child(3) { transform: rotate(1.5deg); }
+.principle-card:nth-child(4) { transform: rotate(-0.5deg); }
+.principle-card:nth-child(5) { transform: rotate(0.5deg); }
+.principle-card:nth-child(6) { transform: rotate(-1.5deg); }
+.principle-card:nth-child(7) { transform: rotate(1deg); }
+.principle-card:nth-child(8) { transform: rotate(-2deg); }
+.principle-card:nth-child(9) { transform: rotate(1.5deg); }
+
+/* Card pin */
+.card-pin {
+  position: absolute;
+  top: -8px;
+  right: var(--space-4);
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Card title */
+.principle-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  line-height: var(--line-snug);
+}
+
+/* Card subtitle */
+.principle-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-gold);
+  font-weight: var(--font-semibold);
+  font-style: italic;
+  margin-bottom: var(--space-4);
+}
+
+/* Card detail (expandable) */
+.principle-detail {
   font-size: var(--text-sm);
   color: var(--text-secondary);
-  margin-top: var(--space-2);
-  font-weight: var(--font-medium);
+  line-height: var(--line-relaxed);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  margin-top: var(--space-3);
 }
 
-/* Stat counter animation (JavaScript will add .counting class) */
-.stat-value.counting {
-  animation: statPulse 0.6s ease-out;
+/* Hover states */
+.principle-card:hover {
+  transform: translateY(-4px) rotate(0deg) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+  z-index: 10;
 }
 
-@keyframes statPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-    color: var(--color-primary);
-  }
-  100% {
-    transform: scale(1);
-  }
+.principle-card:hover .principle-detail {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Active/expanded state */
+.principle-card.expanded {
+  transform: translateY(-4px) rotate(0deg) scale(1.02);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-gold);
+  border-width: 2px;
+  z-index: 10;
+}
+
+.principle-card.expanded .principle-detail {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* Connected highlight state */
+.principle-card.connected {
+  border-color: var(--color-orange);
+  background: var(--color-gold-faint);
+}
+
+/* Connection line styling (applied via JavaScript) */
+.connection-line {
+  stroke: var(--color-gold);
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+  fill: none;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.connection-line.highlighted {
+  stroke: var(--color-orange);
+  stroke-width: 3;
+  opacity: 0.8;
+  stroke-dasharray: none;
 }
 
 /* Mobile responsive */
@@ -192,18 +286,44 @@
     font-size: var(--text-md);
   }
 
-  /* Stats grid remains 2x2 on mobile */
-  .founder-stats {
-    padding: var(--space-6);
-    gap: var(--space-6);
+  /* Principle board stacks vertically on mobile */
+  .principle-board {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    min-height: auto;
   }
 
-  .stat-value {
-    font-size: var(--text-3xl);
+  /* Remove rotations on mobile for readability */
+  .principle-card,
+  .principle-card:nth-child(2),
+  .principle-card:nth-child(3),
+  .principle-card:nth-child(4),
+  .principle-card:nth-child(5),
+  .principle-card:nth-child(6),
+  .principle-card:nth-child(7),
+  .principle-card:nth-child(8),
+  .principle-card:nth-child(9) {
+    transform: none;
   }
 
-  .stat-label {
+  .principle-card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Card title smaller */
+  .principle-title {
+    font-size: var(--text-md);
+  }
+
+  .principle-subtitle {
     font-size: var(--text-xs);
+  }
+
+  /* Pull quote smaller */
+  .pull-quote {
+    font-size: var(--text-lg);
+    padding-left: var(--space-4);
   }
 
   /* Links stack on mobile */

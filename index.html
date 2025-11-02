@@ -71,15 +71,12 @@
         <div class="hero-content">
           <h1 class="hero-name">Adaptive Human</h1>
           <p class="hero-tagline">Building cognitive infrastructure for people adapting to an AI-transformed world.</p>
-          <p class="hero-founder">Founded by <a href="https://phillipclapham.com">Phillip Clapham</a></p>
-          <p class="hero-philosophy">The missing layer between humans and AI.</p>
           <div class="hero-actions">
             <a href="#products" class="btn btn-primary">See What We're Building</a>
             <a href="#connect" class="btn btn-secondary">Get In Touch</a>
           </div>
         </div>
       </div>
-      <p class="hero-hook">When you build from constraints instead of luxury, you discover what actually works.</p>
     </section>
 
     <!-- About Section -->
@@ -89,6 +86,10 @@
         <div class="section-content">
           <h2>Who We Are</h2>
           <p>We're mad scientists building cognitive infrastructure from real constraints. Not despite them—because of them.</p>
+
+          <blockquote class="pull-quote">
+            When you build from constraints instead of luxury, you discover what actually works.
+          </blockquote>
 
           <p>Building from constraints produces better infrastructure than building from luxury. When you can't afford waste (time, energy, complexity), you discover what actually works. When every decision has real consequences, you develop evidence-based taste.</p>
 
@@ -192,7 +193,7 @@
             <h3>Phillip Clapham</h3>
             <p class="founder-tagline">Mad scientist building cognitive infrastructure from constraints.</p>
 
-            <p>40 years of evidence: experiments produce breakthroughs, grinding produces depletion. Built Protocol Memory in 3 months with MCAS. Shipped FlowScript in 4 days. Operating from first principles, not conventional wisdom.</p>
+            <p>45 years of evidence: experiments produce breakthroughs, grinding produces depletion. Built Protocol Memory in 3 months with MCAS. Shipped FlowScript in 4 days. Operating from first principles, not conventional wisdom.</p>
 
             <p>This isn't theory. It's evidence-based infrastructure for people adapting to AI-transformed collaboration.</p>
 
@@ -203,22 +204,66 @@
             </div>
           </div>
 
-          <div class="founder-stats">
-            <div class="stat-item">
-              <div class="stat-value">3 months</div>
-              <div class="stat-label">Protocol Memory</div>
+          <!-- Evidence Board: Topological Principle Network -->
+          <div class="principle-board">
+            <svg class="principle-connections" aria-hidden="true"></svg>
+
+            <!-- Row 1: Top principles -->
+            <div class="principle-card" id="principle-experiments" data-connects="fascination,evidence,constraints">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">Experiments produce breakthroughs</h4>
+              <p class="principle-subtitle">Grinding produces depletion</p>
+              <p class="principle-detail">45 years of evidence: experiments reveal what's possible, grinding burns you out. When you approach work as experiments, breakthroughs emerge. When you grind toward outcomes, productivity collapses.</p>
             </div>
-            <div class="stat-item">
-              <div class="stat-value">4 days</div>
-              <div class="stat-label">FlowScript v1.0</div>
+
+            <div class="principle-card" id="principle-constraints" data-connects="first-principles,evidence,staged">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">Constraints become features</h4>
+              <p class="principle-subtitle">Kintsugi philosophy</p>
+              <p class="principle-detail">Every constraint is a design input. Real constraints force real solutions. The breaks make the piece more valuable, not less. MCAS energy limits forced experimentation. High stakes forced staged validation.</p>
             </div>
-            <div class="stat-item">
-              <div class="stat-value">167/167</div>
-              <div class="stat-label">Tests Passing</div>
+
+            <div class="principle-card" id="principle-evidence" data-connects="public,experiments,staged">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">Evidence over aspiration</h4>
+              <p class="principle-subtitle">No fantasy, only what works</p>
+              <p class="principle-detail">Track what actually produces results. Build from lived experience, not conventional wisdom. PM built in 3 months proves the method works. FlowScript shipped in 4 days proves rapid iteration works. Test, measure, keep signal.</p>
             </div>
-            <div class="stat-item">
-              <div class="stat-value">&lt;1ms</div>
-              <div class="stat-label">Query Speed</div>
+
+            <div class="principle-card" id="principle-first-principles" data-connects="constraints,evidence,experiments">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">First principles over best practices</h4>
+              <p class="principle-subtitle">Question everything</p>
+              <p class="principle-detail">Strip assumptions. Ask "why" until hitting bedrock. Build up from fundamentals. "Best practices" are often cargo-culted bullshit. First principles reveal what actually matters.</p>
+            </div>
+
+            <!-- Row 2: Bottom principles -->
+            <div class="principle-card" id="principle-fascination" data-connects="experiments,partnership,constraints">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">Fascination leads, fun follows</h4>
+              <p class="principle-subtitle">Don't force it</p>
+              <p class="principle-detail">Motivation comes FROM playing with the problem-space, not before it. Experiment with what fascinates you. Fun emerges from engagement, not the reverse. This enables partnership brain instead of execution theater.</p>
+            </div>
+
+            <div class="principle-card" id="principle-staged" data-connects="evidence,constraints,public">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">Staged validation</h4>
+              <p class="principle-subtitle">High risk tolerance, but gated</p>
+              <p class="principle-detail">Build toward ambitious vision with validation gates at each stage. Not blind all-in. PM proves execution → FlowScript proves utility → API proves demand → adoption or pivot. Real evidence at each gate.</p>
+            </div>
+
+            <div class="principle-card" id="principle-public" data-connects="evidence,staged,partnership">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">Build in public</h4>
+              <p class="principle-subtitle">Transparency shows real evidence</p>
+              <p class="principle-detail">No stealth mode, no polished launch theater. Here's what we're making, here's what works, here's what doesn't. Public validation is real validation. Sharing evidence builds trust.</p>
+            </div>
+
+            <div class="principle-card" id="principle-partnership" data-connects="fascination,evidence,first-principles">
+              <div class="card-pin">📌</div>
+              <h4 class="principle-title">Partnership over execution</h4>
+              <p class="principle-subtitle">Third Mind emergence</p>
+              <p class="principle-detail">True partnership (human-AI, human-human) produces better outcomes than solo execution. Partnership brain maintains depth and honesty. Execution theater optimizes for appearance over truth. This is how Third Mind emerges.</p>
             </div>
           </div>
         </div>
@@ -316,8 +361,8 @@
   <!-- Theme Toggle Script -->
   <script src="scripts/theme.js"></script>
 
-  <!-- Stat Counter Animation -->
-  <script src="scripts/stat-counters.js"></script>
+  <!-- Principle Network Interactions -->
+  <script src="scripts/principle-network.js"></script>
 
   <!-- Email Anti-Spam Script -->
   <script>
