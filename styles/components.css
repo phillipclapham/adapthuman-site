@@ -193,14 +193,14 @@
 }
 
 .theme-icon {
-  display: inline-block;
-  font-size: var(--text-lg);
-  line-height: 1;
+  display: block;
+  width: 20px;
+  height: 20px;
 }
 
 /* Show/hide icons based on theme */
 body:not(.dark-mode) .theme-icon-light {
-  display: inline-block;
+  display: block;
 }
 
 body:not(.dark-mode) .theme-icon-dark {
@@ -212,7 +212,7 @@ body.dark-mode .theme-icon-light {
 }
 
 body.dark-mode .theme-icon-dark {
-  display: inline-block;
+  display: block;
 }
 
 
