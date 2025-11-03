@@ -1,0 +1,96 @@
+/**
+ * Interactions - Experiment Orbs, Scribbles, and Interactive Effects
+ * Mad scientist lab energy visualizations
+ */
+
+/* ==========================================
+   EXPERIMENT ORBS - Hybrid (Ripple Light / Filled Dark)
+   ========================================== */
+
+/* Light mode: Water ripple effect (ring outline only) */
+.experiment-orb {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: orbRipple 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  z-index: 9999;
+  will-change: transform, opacity;
+  /* Light mode: ring outline, no fill */
+  border: 2px solid var(--orb-color);
+  background: transparent;
+}
+
+/* Dark mode: Filled gradient orb */
+body.dark-mode .experiment-orb {
+  border: none;
+  background: radial-gradient(circle, var(--orb-color-secondary) 0%, var(--orb-color-tertiary) 35%, transparent 70%);
+  animation: orbExpandDark 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Light mode animation - ripple expanding (less visible) */
+@keyframes orbRipple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Dark mode animation - filled orb (more visible) */
+@keyframes orbExpandDark {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.32;
+  }
+  50% {
+    opacity: 0.22;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .experiment-orb {
+    display: none;
+  }
+}
+
+/* ==========================================
+   SCRIBBLE UNDERLINES - Hand-drawn SVG
+   ========================================== */
+
+.scribble-underline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Section titles need relative positioning for scribble */
+.section-title,
+h2 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Remove these - not using scribbles on pull-quote or hero */
+
+/* ==========================================
+   PLACEHOLDER: MAD SCIENTIST MODE
+   (Phase 3)
+   ========================================== */
+
+/* Will be added in Phase 3 */

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/founder.css">
+  <link rel="stylesheet" href="styles/interactions.css">
 
   <!-- Theme Script (inline to prevent FOUC) -->
   <script>
@@ -28,7 +29,7 @@
 
       if (theme === 'dark') {
         document.documentElement.classList.add('dark-mode');
-        document.body.classList.add('dark-mode');
+        // Body doesn't exist yet - theme.js will handle it when DOM loads
       }
     })();
   </script>
@@ -381,6 +382,15 @@
 
   <!-- Principle Network Interactions -->
   <script src="scripts/principle-network.js"></script>
+
+  <!-- Experiment Orbs Interactive Effect -->
+  <script src="scripts/experiment-orbs.js"></script>
+
+  <!-- Console Easter Eggs -->
+  <script src="scripts/console-features.js"></script>
+
+  <!-- Scribble Underlines -->
+  <script src="scripts/scribble-underlines.js"></script>
 
   <!-- Email Anti-Spam Script -->
   <script>

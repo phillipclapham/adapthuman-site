@@ -257,9 +257,7 @@ body.dark-mode .theme-icon-dark {
   font-weight: var(--font-bold);
   margin-bottom: var(--space-8);
   color: var(--text-primary);
-  /* Subtle gold underline for kintsugi touch */
-  padding-bottom: var(--space-3);
-  border-bottom: 2px solid var(--color-gold);
+  /* No border - scribble underline handled by JS */
   display: inline-block;
 }
 
