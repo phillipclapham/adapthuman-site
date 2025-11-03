@@ -1,5 +1,5 @@
 /**
- * Principle Network - Topological Evidence Board
+ * Principle Network - Topological Evidence Board with Modal
  * Demonstrates FlowScript's vision: ideas connecting in thought-space
  */
 
@@ -9,10 +9,60 @@
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Principle data lookup
+  const principleData = {
+    'experiments': {
+      title: 'Experiments produce breakthroughs',
+      subtitle: 'Grinding produces depletion',
+      detail: '45 years of evidence: experiments reveal what\'s possible, grinding burns you out. When you approach work as experiments, breakthroughs emerge. When you grind toward outcomes, productivity collapses.',
+      connects: ['fascination', 'evidence', 'constraints']
+    },
+    'constraints': {
+      title: 'Constraints become features',
+      subtitle: 'Kintsugi philosophy',
+      detail: 'Every constraint is a design input. Real constraints force real solutions. The breaks make the piece more valuable, not less. MCAS energy limits forced experimentation. High stakes forced staged validation.',
+      connects: ['first-principles', 'evidence', 'staged']
+    },
+    'evidence': {
+      title: 'Evidence over aspiration',
+      subtitle: 'No fantasy, only what works',
+      detail: 'Track what actually produces results. Build from lived experience, not conventional wisdom. PM built in 3 months proves the method works. FlowScript shipped in 4 days proves rapid iteration works. Test, measure, keep signal.',
+      connects: ['public', 'experiments', 'staged']
+    },
+    'first-principles': {
+      title: 'First principles over best practices',
+      subtitle: 'Question everything',
+      detail: 'Strip assumptions. Ask "why" until hitting bedrock. Build up from fundamentals. "Best practices" are often cargo-culted bullshit. First principles reveal what actually matters.',
+      connects: ['constraints', 'evidence', 'experiments']
+    },
+    'fascination': {
+      title: 'Fascination leads, fun follows',
+      subtitle: 'Don\'t force it',
+      detail: 'Motivation comes FROM playing with the problem-space, not before it. Experiment with what fascinates you. Fun emerges from engagement, not the reverse. This enables partnership brain instead of execution theater.',
+      connects: ['experiments', 'partnership', 'constraints']
+    },
+    'staged': {
+      title: 'Staged validation',
+      subtitle: 'High risk tolerance, but gated',
+      detail: 'Build toward ambitious vision with validation gates at each stage. Not blind all-in. PM proves execution → FlowScript proves utility → API proves demand → adoption or pivot. Real evidence at each gate.',
+      connects: ['evidence', 'constraints', 'public']
+    },
+    'public': {
+      title: 'Build in public',
+      subtitle: 'Transparency shows real evidence',
+      detail: 'No stealth mode, no polished launch theater. Here\'s what we\'re making, here\'s what works, here\'s what doesn\'t. Public validation is real validation. Sharing evidence builds trust.',
+      connects: ['evidence', 'staged', 'partnership']
+    },
+    'partnership': {
+      title: 'Partnership over execution',
+      subtitle: 'Third Mind emergence',
+      detail: 'True partnership (human-AI, human-human) produces better outcomes than solo execution. Partnership brain maintains depth and honesty. Execution theater optimizes for appearance over truth. This is how Third Mind emerges.',
+      connects: ['fascination', 'evidence', 'first-principles']
+    }
+  };
+
   /**
    * Get center point of an element
-   * @param {HTMLElement} element
-   * @returns {Object} {x, y} coordinates
    */
   function getElementCenter(element) {
     const rect = element.getBoundingClientRect();
@@ -27,19 +77,12 @@
 
   /**
    * Draw curved SVG line between two points
-   * @param {Object} start - {x, y}
-   * @param {Object} end - {x, y}
-   * @returns {string} SVG path d attribute
    */
   function drawCurvedLine(start, end) {
-    // Calculate control points for bezier curve
     const dx = end.x - start.x;
     const dy = end.y - start.y;
 
     // Create gentle curve
-    const curve = Math.min(Math.abs(dx), Math.abs(dy)) * 0.3;
-
-    // Control points offset perpendicular to the line
     const cx1 = start.x + dx * 0.25 - dy * 0.1;
     const cy1 = start.y + dy * 0.25 + dx * 0.1;
     const cx2 = start.x + dx * 0.75 + dy * 0.1;
@@ -49,7 +92,7 @@
   }
 
   /**
-   * Draw all connection lines between principles
+   * Draw all connection lines
    */
   function drawConnections() {
     const svg = document.querySelector('.principle-connections');
@@ -58,19 +101,14 @@
     const board = document.querySelector('.principle-board');
     if (!board) return;
 
-    // Clear existing paths
     svg.innerHTML = '';
 
-    // Set SVG viewBox to match board dimensions
     const boardRect = board.getBoundingClientRect();
     svg.setAttribute('width', boardRect.width);
     svg.setAttribute('height', boardRect.height);
     svg.setAttribute('viewBox', `0 0 ${boardRect.width} ${boardRect.height}`);
 
-    // Get all principle cards
     const cards = Array.from(document.querySelectorAll('.principle-card'));
-
-    // Track drawn connections to avoid duplicates
     const drawn = new Set();
 
     cards.forEach(card => {
@@ -78,17 +116,13 @@
       const connects = card.dataset.connects ? card.dataset.connects.split(',') : [];
 
       connects.forEach(targetId => {
-        // Create unique key for this connection
         const connectionKey = [cardId, targetId].sort().join('-');
-
-        // Skip if already drawn
         if (drawn.has(connectionKey)) return;
         drawn.add(connectionKey);
 
         const targetCard = document.getElementById(`principle-${targetId}`);
         if (!targetCard) return;
 
-        // Get center points relative to the board
         const boardPos = board.getBoundingClientRect();
         const startRect = card.getBoundingClientRect();
         const endRect = targetCard.getBoundingClientRect();
@@ -103,7 +137,6 @@
           y: endRect.top - boardPos.top + endRect.height / 2
         };
 
-        // Create path element
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', drawCurvedLine(start, end));
         path.classList.add('connection-line');
@@ -116,9 +149,7 @@
   }
 
   /**
-   * Highlight connections for a specific card
-   * @param {string} cardId - ID of the card (without 'principle-' prefix)
-   * @param {boolean} highlight - Whether to highlight or unhighlight
+   * Highlight connections for a card
    */
   function highlightConnections(cardId, highlight) {
     const card = document.getElementById(`principle-${cardId}`);
@@ -126,7 +157,6 @@
 
     const connects = card.dataset.connects ? card.dataset.connects.split(',') : [];
 
-    // Highlight/unhighlight connection lines
     const lines = document.querySelectorAll('.connection-line');
     lines.forEach(line => {
       const from = line.dataset.from;
@@ -141,7 +171,6 @@
       }
     });
 
-    // Highlight/unhighlight connected cards
     connects.forEach(targetId => {
       const targetCard = document.getElementById(`principle-${targetId}`);
       if (targetCard) {
@@ -155,7 +184,73 @@
   }
 
   /**
-   * Handle card hover
+   * Open modal with principle details
+   */
+  function openModal(principleId) {
+    const modal = document.getElementById('principle-modal');
+    if (!modal) return;
+
+    const data = principleData[principleId];
+    if (!data) return;
+
+    // Populate modal content
+    modal.querySelector('.modal-title').textContent = data.title;
+    modal.querySelector('.modal-subtitle').textContent = data.subtitle;
+    modal.querySelector('.modal-detail').textContent = data.detail;
+
+    // Populate connected principles
+    const connectionLinks = modal.querySelector('.connection-links');
+    connectionLinks.innerHTML = '';
+
+    data.connects.forEach(connectedId => {
+      const connectedData = principleData[connectedId];
+      if (!connectedData) return;
+
+      const link = document.createElement('div');
+      link.className = 'connection-link';
+      link.dataset.principleId = connectedId;
+
+      const title = document.createElement('div');
+      title.className = 'connection-link-title';
+      title.textContent = connectedData.title;
+
+      link.appendChild(title);
+      connectionLinks.appendChild(link);
+
+      // Click to navigate to connected principle
+      link.addEventListener('click', () => {
+        openModal(connectedId);
+      });
+    });
+
+    // Show modal
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    // Highlight connections in background
+    highlightConnections(principleId, true);
+  }
+
+  /**
+   * Close modal
+   */
+  function closeModal() {
+    const modal = document.getElementById('principle-modal');
+    if (!modal) return;
+
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+
+    // Unhighlight all connections
+    const cards = document.querySelectorAll('.principle-card');
+    cards.forEach(card => card.classList.remove('connected'));
+
+    const lines = document.querySelectorAll('.connection-line');
+    lines.forEach(line => line.classList.remove('highlighted'));
+  }
+
+  /**
+   * Setup card interactions
    */
   function setupCardInteractions() {
     const cards = document.querySelectorAll('.principle-card');
@@ -163,7 +258,7 @@
     cards.forEach(card => {
       const cardId = card.id.replace('principle-', '');
 
-      // Hover to highlight connections
+      // Hover: highlight connections only (no expansion)
       card.addEventListener('mouseenter', () => {
         if (!prefersReducedMotion) {
           highlightConnections(cardId, true);
@@ -172,73 +267,59 @@
 
       card.addEventListener('mouseleave', () => {
         if (!prefersReducedMotion) {
-          highlightConnections(cardId, false);
-          // Remove expanded state if not clicked
-          if (!card.classList.contains('clicked')) {
-            card.classList.remove('expanded');
+          // Don't unhighlight if modal is open for this card
+          const modal = document.getElementById('principle-modal');
+          if (!modal || modal.style.display === 'none') {
+            highlightConnections(cardId, false);
           }
         }
       });
 
-      // Click to expand/collapse
+      // Click: open modal
       card.addEventListener('click', (e) => {
         e.stopPropagation();
-
-        // Toggle expanded state
-        const wasExpanded = card.classList.contains('expanded');
-
-        // Remove expanded from all other cards
-        cards.forEach(c => {
-          c.classList.remove('expanded', 'clicked');
-        });
-
-        if (!wasExpanded) {
-          card.classList.add('expanded', 'clicked');
-          highlightConnections(cardId, true);
-        } else {
-          card.classList.remove('expanded', 'clicked');
-          highlightConnections(cardId, false);
-        }
+        openModal(cardId);
       });
     });
 
-    // Click outside to collapse all
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.principle-card')) {
-        cards.forEach(card => {
-          card.classList.remove('expanded', 'clicked');
-        });
+    // Close modal on backdrop click or close button
+    const modal = document.getElementById('principle-modal');
+    if (modal) {
+      const backdrop = modal.querySelector('.modal-backdrop');
+      const closeBtn = modal.querySelector('.modal-close');
 
-        // Unhighlight all connections
-        const lines = document.querySelectorAll('.connection-line');
-        lines.forEach(line => line.classList.remove('highlighted'));
-
-        // Unhighlight all connected cards
-        cards.forEach(card => card.classList.remove('connected'));
+      if (backdrop) {
+        backdrop.addEventListener('click', closeModal);
       }
-    });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      // ESC key to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          closeModal();
+        }
+      });
+    }
   }
 
   /**
-   * Initialize the principle network
+   * Initialize
    */
   function init() {
     const board = document.querySelector('.principle-board');
     if (!board) return;
 
-    // Draw initial connections
     drawConnections();
-
-    // Setup interactions
     setupCardInteractions();
 
-    // Redraw connections on window resize (debounced)
+    // Redraw on resize (debounced)
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        drawConnections();
-      }, 250);
+      resizeTimeout = setTimeout(drawConnections, 250);
     });
 
     // Redraw after fonts load
@@ -249,7 +330,7 @@
     }
   }
 
-  // Initialize when DOM is ready
+  // Initialize when ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
