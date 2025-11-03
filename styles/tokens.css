@@ -37,6 +37,16 @@
   --color-orange-hover: #D35400;
   --color-orange-faint: rgba(230, 126, 34, 0.1);
 
+  /* Accent colors - Purple (spectrum) */
+  --color-purple: #9333ea;
+  --color-purple-hover: #a855f7;
+  --color-purple-faint: rgba(147, 51, 234, 0.1);
+
+  /* Accent colors - Magenta (spectrum) */
+  --color-magenta: #db2777;
+  --color-magenta-hover: #ec4899;
+  --color-magenta-faint: rgba(219, 39, 119, 0.1);
+
   /* Status colors */
   --color-success: #10b981;
   --color-error: #ef4444;
@@ -244,6 +254,16 @@ body.dark-mode {
   --color-orange: #F39C12;
   --color-orange-hover: #F4B350;
   --color-orange-faint: rgba(243, 156, 18, 0.15);
+
+  /* Accent colors - Purple (brighter for dark mode) */
+  --color-purple: #a855f7;
+  --color-purple-hover: #c084fc;
+  --color-purple-faint: rgba(168, 85, 247, 0.15);
+
+  /* Accent colors - Magenta (brighter for dark mode) */
+  --color-magenta: #ec4899;
+  --color-magenta-hover: #f472b6;
+  --color-magenta-faint: rgba(236, 72, 153, 0.15);
 
   /* Status colors (adjusted for dark backgrounds) */
   --color-success: #10b981;

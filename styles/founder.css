@@ -141,8 +141,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
-  margin-top: var(--space-6);
-  padding: var(--space-8);
   min-height: 600px;
 }
 
@@ -180,6 +178,102 @@
 .principle-card:nth-child(8) { transform: rotate(-2deg); }
 .principle-card:nth-child(9) { transform: rotate(1.5deg); }
 
+/* Spectrum glow effect - Third Mind emergence visual */
+.principle-card::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    #2dd4bf 8%,
+    #3b82f6 16%,
+    #8b5cf6 24%,
+    var(--color-purple) 32%,
+    #c026d3 40%,
+    var(--color-magenta) 48%,
+    #f97316 56%,
+    var(--color-orange) 64%,
+    #eab308 72%,
+    var(--color-gold) 80%,
+    var(--color-orange) 88%,
+    var(--color-accent) 96%,
+    var(--color-accent) 100%
+  );
+  border-radius: calc(var(--radius-md) + 4px);
+  opacity: 0;
+  filter: blur(16px);
+  transition: opacity 0.5s ease, filter 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.principle-card:hover::before {
+  opacity: 0.18;
+  animation: spectrumPulse 3s ease-in-out infinite;
+}
+
+/* Dark mode - slightly stronger glow */
+body.dark-mode .principle-card:hover::before {
+  opacity: 0.25;
+}
+
+@keyframes spectrumPulse {
+  0%, 100% {
+    filter: blur(16px) brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: blur(20px) brightness(1.3);
+    transform: scale(1.05);
+  }
+}
+
+/* Electric shimmer on edges - Mad scientist lab energy */
+.principle-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    var(--color-gold) 15%,
+    transparent 30%,
+    var(--color-accent) 50%,
+    transparent 65%,
+    var(--color-purple) 85%,
+    transparent 100%
+  );
+  background-size: 300% 300%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.principle-card:hover::after {
+  opacity: 0.25;
+  animation: electricShimmer 4s linear infinite;
+}
+
+@keyframes electricShimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 300% 300%;
+  }
+}
+
+/* Disable animations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .principle-card::before,
+  .principle-card::after {
+    animation: none !important;
+  }
+}
+
 /* Card pin */
 .card-pin {
   position: absolute;
@@ -212,12 +306,20 @@
   display: none;
 }
 
-/* Hover states - subtle focus only */
+/* Hover states - dramatic elevation with spectrum energy */
 .principle-card:hover {
-  transform: translateY(-4px) rotate(0deg);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px) rotate(0deg) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px var(--color-gold);
   border-color: var(--color-gold);
   z-index: 10;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Light mode - darker gold on hover for better visibility */
+body:not(.dark-mode) .principle-card:hover .principle-subtitle {
+  color: #8B7335;
 }
 
 /* Connected highlight state */
@@ -233,14 +335,28 @@
   stroke-dasharray: 5, 5;
   fill: none;
   opacity: 0.3;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 0 0px transparent);
 }
 
+/* Highlighted connection lines - Spectrum energy flow */
 .connection-line.highlighted {
-  stroke: var(--color-orange);
+  stroke: url(#spectrumGradient);
   stroke-width: 3;
-  opacity: 0.8;
+  opacity: 1;
   stroke-dasharray: none;
+  filter: drop-shadow(0 0 4px var(--color-purple));
+  animation: lineEnergy 2s ease-in-out infinite;
+}
+
+@keyframes lineEnergy {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--color-purple));
+  }
 }
 
 /* ============================================
@@ -259,6 +375,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-4);
+  overflow: hidden;
 }
 
 /* Modal backdrop */
@@ -284,9 +401,76 @@
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: var(--shadow-2xl);
   z-index: 1;
   animation: modalSlideUp 0.3s ease-out;
+}
+
+/* Golden glow aura - Kintsugi philosophy (highlighting the valuable) */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 175, 55, 0.6) 0%,
+    rgba(212, 175, 55, 0.4) 30%,
+    rgba(212, 175, 55, 0.2) 50%,
+    transparent 70%
+  );
+  border-radius: calc(var(--radius-lg) + 8px);
+  filter: blur(24px);
+  z-index: -1;
+  animation: goldenPulse 4s ease-in-out infinite;
+  pointer-events: none;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Electric blue accent (partnership energy) */
+.modal-content::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: radial-gradient(
+    ellipse at 80% 20%,
+    rgba(0, 168, 171, 0.4) 0%,
+    rgba(0, 168, 171, 0.2) 30%,
+    transparent 60%
+  );
+  border-radius: calc(var(--radius-lg) + 6px);
+  filter: blur(20px);
+  z-index: -1;
+  animation: goldenPulse 4s ease-in-out infinite reverse;
+  pointer-events: none;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@keyframes goldenPulse {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* Disable modal animations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .modal-content::before,
+  .modal-content::after {
+    animation: none !important;
+  }
 }
 
 /* Modal close button */
@@ -317,6 +501,7 @@
 /* Modal body */
 .modal-body {
   padding-right: var(--space-8);
+  overflow-x: hidden;
 }
 
 /* Modal title */
@@ -343,6 +528,7 @@
   color: var(--text-secondary);
   line-height: var(--line-relaxed);
   margin-bottom: var(--space-8);
+  font-weight: var(--font-medium);
 }
 
 /* Modal connections section */
@@ -360,11 +546,17 @@
   margin-bottom: var(--space-4);
 }
 
+/* Light mode - darker for better visibility */
+body:not(.dark-mode) .modal-connections h4 {
+  color: #626468;
+}
+
 /* Connection links */
 .connection-links {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  overflow-x: hidden;
 }
 
 .connection-link {
@@ -374,16 +566,50 @@
   background: var(--bg-tertiary);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   border-left: 3px solid var(--color-gold);
   text-decoration: none;
   color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Spectrum shimmer effect on connection links */
+.connection-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 168, 171, 0.1) 25%,
+    rgba(147, 51, 234, 0.1) 50%,
+    rgba(212, 175, 55, 0.1) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .connection-link:hover {
   background: var(--color-gold-faint);
   border-left-color: var(--color-orange);
   transform: translateX(4px);
+}
+
+.connection-link:hover::before {
+  opacity: 1;
+  animation: spectrumFlow 2s linear infinite;
+}
+
+@keyframes spectrumFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
 }
 
 .connection-link-title {

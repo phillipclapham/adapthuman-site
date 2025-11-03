@@ -21,31 +21,31 @@
       title: 'Constraints become features',
       subtitle: 'Kintsugi philosophy',
       detail: 'Every constraint is a design input. Real constraints force real solutions. The breaks make the piece more valuable, not less. MCAS energy limits forced experimentation. High stakes forced staged validation.',
-      connects: ['first-principles', 'evidence', 'staged']
+      connects: ['experiments', 'first-principles', 'staged']
     },
     'evidence': {
       title: 'Evidence over aspiration',
       subtitle: 'No fantasy, only what works',
       detail: 'Track what actually produces results. Build from lived experience, not conventional wisdom. PM built in 3 months proves the method works. FlowScript shipped in 4 days proves rapid iteration works. Test, measure, keep signal.',
-      connects: ['public', 'experiments', 'staged']
+      connects: ['experiments', 'public', 'staged']
     },
     'first-principles': {
       title: 'First principles over best practices',
       subtitle: 'Question everything',
       detail: 'Strip assumptions. Ask "why" until hitting bedrock. Build up from fundamentals. "Best practices" are often cargo-culted bullshit. First principles reveal what actually matters.',
-      connects: ['constraints', 'evidence', 'experiments']
+      connects: ['constraints', 'partnership', 'fascination']
     },
     'fascination': {
       title: 'Fascination leads, fun follows',
       subtitle: 'Don\'t force it',
       detail: 'Motivation comes FROM playing with the problem-space, not before it. Experiment with what fascinates you. Fun emerges from engagement, not the reverse. This enables partnership brain instead of execution theater.',
-      connects: ['experiments', 'partnership', 'constraints']
+      connects: ['experiments', 'first-principles', 'partnership']
     },
     'staged': {
       title: 'Staged validation',
       subtitle: 'High risk tolerance, but gated',
       detail: 'Build toward ambitious vision with validation gates at each stage. Not blind all-in. PM proves execution → FlowScript proves utility → API proves demand → adoption or pivot. Real evidence at each gate.',
-      connects: ['evidence', 'constraints', 'public']
+      connects: ['constraints', 'evidence', 'public']
     },
     'public': {
       title: 'Build in public',
@@ -57,7 +57,7 @@
       title: 'Partnership over execution',
       subtitle: 'Third Mind emergence',
       detail: 'True partnership (human-AI, human-human) produces better outcomes than solo execution. Partnership brain maintains depth and honesty. Execution theater optimizes for appearance over truth. This is how Third Mind emerges.',
-      connects: ['fascination', 'evidence', 'first-principles']
+      connects: ['fascination', 'first-principles', 'public']
     }
   };
 
@@ -107,6 +107,32 @@
     svg.setAttribute('width', boardRect.width);
     svg.setAttribute('height', boardRect.height);
     svg.setAttribute('viewBox', `0 0 ${boardRect.width} ${boardRect.height}`);
+
+    // Add spectrum gradient definition for connection lines
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'spectrumGradient');
+    gradient.setAttribute('x1', '0%');
+    gradient.setAttribute('y1', '0%');
+    gradient.setAttribute('x2', '100%');
+    gradient.setAttribute('y2', '100%');
+
+    const stops = [
+      { offset: '0%', color: '#00a8ab' },    // Teal
+      { offset: '33%', color: '#a855f7' },   // Purple
+      { offset: '66%', color: '#ec4899' },   // Magenta
+      { offset: '100%', color: '#D4AF37' }   // Gold
+    ];
+
+    stops.forEach(stop => {
+      const stopElement = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+      stopElement.setAttribute('offset', stop.offset);
+      stopElement.setAttribute('stop-color', stop.color);
+      gradient.appendChild(stopElement);
+    });
+
+    defs.appendChild(gradient);
+    svg.appendChild(defs);
 
     const cards = Array.from(document.querySelectorAll('.principle-card'));
     const drawn = new Set();
