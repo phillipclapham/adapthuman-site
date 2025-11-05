@@ -24,8 +24,12 @@
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/main.css">
 
-  <!-- Custom styles for evidence badges -->
+  <!-- Custom styles for evidence badges and smooth scrolling -->
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     .evidence-badge {
       display: inline-block;
       padding: 0.125rem 0.5rem;
@@ -92,19 +96,6 @@
     }
   </style>
 
-  <!-- Theme Script (inline to prevent FOUC) -->
-  <script>
-    // Apply saved theme immediately to prevent flash
-    (function() {
-      const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark-mode');
-      }
-    })();
-  </script>
 </head>
 <body>
 
@@ -168,19 +159,19 @@
 
           <p>Mad science isn't a productivity system. It's permission to work how your brain actually functions.</p>
 
-          <p><strong>The architecture in five parts:</strong></p>
+          <p><strong>The architecture in six parts:</strong></p>
           <ol>
-            <li><strong>The Foundation</strong> - Meta-perception (the skill that enables everything else)</li>
-            <li><strong>The Model</strong> - How cognition actually works (perception-action loop)</li>
-            <li><strong>The Shift</strong> - Frames as experiments, not truth (foundational mindset)</li>
-            <li><strong>The Mechanism</strong> - Frame-selection point (where intervention happens)</li>
-            <li><strong>The Practice</strong> - Complete toolkit (how to do it)</li>
-            <li><strong>The Guide</strong> - Fascination leads (what drives selection)</li>
+            <li><a href="#part-0"><strong>The Foundation</strong> - Meta-perception (the skill that enables everything else)</a></li>
+            <li><a href="#part-1"><strong>The Model</strong> - How cognition actually works (perception-action loop)</a></li>
+            <li><a href="#part-2"><strong>The Shift</strong> - Frames as experiments, not truth (foundational mindset)</a></li>
+            <li><a href="#part-3"><strong>The Mechanism</strong> - Frame-selection point (where intervention happens)</a></li>
+            <li><a href="#part-4"><strong>The Practice</strong> - Complete toolkit (how to do it)</a></li>
+            <li><a href="#part-5"><strong>The Guide</strong> - Fascination leads (what drives selection)</a></li>
           </ol>
         </section>
 
         <!-- PART 0: The Foundation -->
-        <section class="content-section">
+        <section id="part-0" class="content-section">
           <h2>Part 0: The Foundation (Meta-Perception)</h2>
 
           <h3><span class="evidence-badge evidence-supported">Supported</span> Watching Yourself Think</h3>
@@ -307,7 +298,7 @@
         </section>
 
         <!-- PART 1: The Model -->
-        <section class="content-section">
+        <section id="part-1" class="content-section">
           <h2>Part 1: The Model (How Cognition Actually Works)</h2>
 
           <h3><span class="evidence-badge evidence-proven">Proven</span> The Perception-Action Loop</h3>
@@ -413,7 +404,7 @@ Influences Next Perception → LOOP CONTINUES
         </section>
 
         <!-- PART 2: The Shift -->
-        <section class="content-section">
+        <section id="part-2" class="content-section">
           <h2>Part 2: The Shift (Frames as Experiments, Not Truth)</h2>
 
           <h3><span class="evidence-badge evidence-supported">Supported</span> Belief as Toy, Not Chain</h3>
@@ -470,7 +461,7 @@ Influences Next Perception → LOOP CONTINUES
         </section>
 
         <!-- PART 3: The Mechanism -->
-        <section class="content-section">
+        <section id="part-3" class="content-section">
           <h2>Part 3: The Mechanism (Where Intervention Happens)</h2>
 
           <h3><span class="evidence-badge evidence-proven">Proven</span> The Frame-Selection Point</h3>
@@ -608,7 +599,7 @@ Influences Next Perception → LOOP CONTINUES
         </section>
 
         <!-- PART 4: The Practice -->
-        <section class="content-section">
+        <section id="part-4" class="content-section">
           <h2>Part 4: The Practice (How to Do It)</h2>
 
           <h3><span class="evidence-badge evidence-supported">Supported</span> Meta-Perception: The Dual State</h3>
@@ -1396,7 +1387,7 @@ Influences Next Perception → LOOP CONTINUES
         </section>
 
         <!-- PART 5: The Guide -->
-        <section class="content-section">
+        <section id="part-5" class="content-section">
           <h2>Part 5: The Guide (What Drives Selection)</h2>
 
           <h3>Fascination ⟷ Fun</h3>
@@ -1764,15 +1755,7 @@ Influences Next Perception → LOOP CONTINUES
   </footer>
 
   <!-- Theme Toggle Script -->
-  <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    themeToggle.addEventListener('click', () => {
-      const isDark = html.classList.toggle('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-  </script>
+  <script src="scripts/theme.js"></script>
 
 </body>
 </html>
