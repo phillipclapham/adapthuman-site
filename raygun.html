@@ -24,6 +24,74 @@
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/main.css">
 
+  <!-- Custom styles for evidence badges -->
+  <style>
+    .evidence-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      margin-right: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    .evidence-proven {
+      background: rgba(0, 168, 171, 0.15);
+      color: var(--color-primary-teal);
+      border: 1px solid var(--color-primary-teal);
+    }
+
+    .evidence-supported {
+      background: rgba(52, 152, 219, 0.15);
+      color: #3498db;
+      border: 1px solid #3498db;
+    }
+
+    .evidence-extension {
+      background: rgba(230, 126, 34, 0.15);
+      color: var(--color-burnt-orange);
+      border: 1px solid var(--color-burnt-orange);
+    }
+
+    .confidence-section {
+      background: var(--color-gray-50);
+      border-left: 4px solid var(--color-primary-teal);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    .confidence-section h4 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary-teal);
+      font-size: 1rem;
+    }
+
+    .confidence-section h4:first-of-type {
+      margin-top: 0;
+    }
+
+    .version-history {
+      background: var(--color-gray-50);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .version-history ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+
+    .version-history li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+
   <!-- Theme Script (inline to prevent FOUC) -->
   <script>
     // Apply saved theme immediately to prevent flash
@@ -75,6 +143,7 @@
       <div class="container container-narrow">
         <h1>RAYGUN OS</h1>
         <p class="page-subtitle">The Mad Scientist Operating System</p>
+        <p style="margin-top: 0.5rem; color: var(--color-text-secondary); font-size: 0.875rem;">Version 3.1 - Nov 3, 2025</p>
       </div>
     </section>
 
@@ -83,6 +152,8 @@
       <div class="container container-narrow">
 
         <section class="content-section">
+          <h2>Opening</h2>
+
           <p>Right now, you're reading this. But are you experimenting with understanding it, or grinding through it?</p>
 
           <p>There's a difference. And that difference changes everything.</p>
@@ -93,7 +164,7 @@
 
           <p><strong>This is about being ALIVE.</strong> Engaged with reality. Fascinated by what emerges. Playing with the world as your laboratory.</p>
 
-          <p>Below is the complete cognitive architecture of how this actually works—how your brain processes reality, where you can intervene, and how to shift from depleting grind mode to energizing experiment mode. It's grounded in neuroscience, honest about what's proven vs. hypothesis, and built for people whose brains run on experiments.</p>
+          <p>Below is the complete cognitive architecture of how this actually works—how your brain processes reality, where you can intervene, and how to shift from depleting grind mode to energizing experiment mode. It's grounded in neuroscience, honest about what's proven vs hypothesis, and built for people whose brains run on experiments.</p>
 
           <p>Mad science isn't a productivity system. It's permission to work how your brain actually functions.</p>
 
@@ -111,7 +182,9 @@
         <section class="content-section">
           <h2>Part 1: The Model (How Cognition Actually Works)</h2>
 
-          <h3>The Perception-Action Loop</h3>
+          <h3><span class="evidence-badge evidence-proven">Proven</span> The Perception-Action Loop</h3>
+
+          <p><em><strong>Extensive neuroscience backing</strong></em></p>
 
           <p>Your brain doesn't passively perceive reality then respond. It runs a continuous feedback loop:</p>
 
@@ -135,52 +208,61 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>The feedback mechanism:</strong></p>
 
-          <p>What you consciously focus on literally changes what your subconscious filters for next time. This is measurable—attention creates neural activation patterns that persist.</p>
+          <p>Conscious framing → influences subconscious filtering (positive feedback loop)</p>
+
+          <p>What you consciously focus on literally changes what your subconscious filters for next time. This is measurable via fMRI - attention creates neural activation patterns that persist.</p>
 
           <p><strong>Key insights:</strong></p>
           <ol>
-            <li>Subconscious filtering happens BEFORE conscious framing (you don't see "everything" then interpret—you see a filtered subset, then apply narrative)</li>
-            <li>The feedback loop is bidirectional (your conscious narrative influences future filtering, creating reinforcing cycles)</li>
-            <li>There's a transition point between automatic processing and conscious narrative where intervention is possible</li>
+            <li><strong>Subconscious filtering happens BEFORE conscious framing</strong> - You don't see "everything" then interpret it. You see a filtered subset, then apply narrative.</li>
+            <li><strong>The feedback loop is bidirectional</strong> - Your conscious narrative influences future filtering. This creates reinforcing cycles (good or bad).</li>
+            <li><strong>There's a transition point between automatic processing and conscious narrative</strong> - Normally seamless/invisible (you go straight from trigger → automatic frame → reaction). Through practice, you can develop awareness AT that point. This creates functional space for conscious intervention.</li>
           </ol>
 
-          <p><em>Research backing: Predictive processing frameworks, perception-action cycles, enactive cognition, active inference models, feedback projections in visual cortex</em></p>
+          <p><em>Research backing: Predictive processing frameworks (Karl Friston, Andy Clark), perception-action cycles (Joaquín Fuster), enactive cognition, active inference models, feedback projections in visual cortex (as numerous as feedforward connections)</em></p>
 
           <p><strong>This is the foundation.</strong> Everything else builds on understanding that perception is a loop, not a line.</p>
         </section>
 
         <!-- Frame Pragmatism -->
         <section class="content-section">
-          <h3>Frame Pragmatism: Multiple Valid Perspectives</h3>
+          <h3><span class="evidence-badge evidence-supported">Supported</span> Frame Pragmatism: Multiple Valid Perspectives</h3>
+
+          <p><em><strong>Cognitive psychology + pragmatic philosophy</strong></em></p>
 
           <p><strong>The sphere metaphor:</strong></p>
 
-          <p>Think of reality as a 3D sphere. Any single frame you use is like a 2D projection of that sphere.</p>
+          <p>Reality = 3D sphere<br>
+          Any single frame = 2D projection of that sphere</p>
 
           <p>Every frame gives you a different (and often seemingly contradictory) view, but:</p>
           <ul>
-            <li><strong>Bounded</strong> - There's a finite set of valid perspectives (not infinite relativism)</li>
+            <li><strong>Bounded</strong> - There's a finite set of valid perspectives (no solipsism)</li>
             <li><strong>Multiple</strong> - More than one valid view exists simultaneously</li>
             <li><strong>Incomplete</strong> - You can only hold one frame at a time</li>
-            <li><strong>No "true" frame</strong> - The complete "truth" would be the average of all possible views, which is impossible to hold</li>
+            <li><strong>No "true" frame</strong> - The "complete truth" would be the mean average of all possible views, which is functionally impossible to hold</li>
           </ul>
 
           <p><strong>The implication:</strong></p>
 
-          <p>Binary truth (as we normally think of it) doesn't exist pre-perception. Reality is a dynamic information field. Your mind imposes order, creates connections, generates "truth" through framing.</p>
+          <p>Binary truth (as we normally conceive it) doesn't exist pre-perception. Reality is a dynamic information field. Mind imposes order, creates connections, generates "truth" through framing.</p>
 
           <p><strong>Therefore: Frame selection can be pragmatic (for utility/fascination) rather than truth-seeking.</strong></p>
 
           <p><em>Research backing: Framing effects (Kahneman/Tversky), constructivist epistemology, pragmatic constructivism, cognitive flexibility theory</em></p>
 
-          <p><strong>Critical nuance:</strong> This isn't relativism ("all perspectives equally valid"). It's recognition that multiple valid perspectives exist for different purposes, and frame selection can optimize for what's useful rather than searching for singular "truth."</p>
+          <p><strong>Critical nuance:</strong> This isn't relativism ("all perspectives equally valid"). It's recognition that multiple valid perspectives exist for different purposes, and frame selection can optimize for utility rather than searching for singular "truth."</p>
+
+          <p><span class="evidence-badge evidence-extension">Logical Extension</span> We add: fascination-driven selection (research focuses on utility, we extend to fascination). Evidence suggests utility-based frame selection works - fascination is a subset of utility (serves engagement/sustainability).</p>
         </section>
 
         <!-- PART 2: The Shift -->
         <section class="content-section">
           <h2>Part 2: The Shift (Frames as Experiments, Not Truth)</h2>
 
-          <h3>Belief as Toy, Not Chain</h3>
+          <h3><span class="evidence-badge evidence-supported">Supported</span> Belief as Toy, Not Chain</h3>
+
+          <p><em><strong>ACT research + cognitive flexibility</strong></em></p>
 
           <p><strong>Traditional framing:</strong></p>
           <ul>
@@ -198,14 +280,12 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>This is what makes it MAD SCIENCE:</strong></p>
 
-          <ul>
-            <li>You can hold contradictory frames without dissonance (they're experiments, not claims)</li>
-            <li>You can test "wrong" frames deliberately (see what emerges)</li>
-            <li>You can rapid-switch between frames (like changing camera lenses)</li>
-            <li>Fascination drives selection, not truth-seeking (what's interesting to explore?)</li>
-          </ul>
+          <p>You can hold contradictory frames without dissonance (they're experiments, not claims)<br>
+          You can test "wrong" frames deliberately (see what emerges)<br>
+          You can rapid-switch between frames (like changing camera lenses)<br>
+          Fascination drives selection, not truth-seeking (what's interesting to explore?)</p>
 
-          <p><em>Research backing: Acceptance and Commitment Therapy explicitly states "Belief is not your friend"—therapeutic perspective-taking without requiring belief. Cognitive flexibility correlates with better problem-solving outcomes.</em></p>
+          <p><em>Research backing: Acceptance and Commitment Therapy explicitly: "Belief is not your friend" - therapeutic perspective-taking without requiring belief. Cognitive flexibility correlates with better problem-solving outcomes. Perspective-taking without commitment is established practice. Different from cognitive dissonance (which involves believing contradictory things simultaneously).</em></p>
 
           <p><strong>The foundational shift:</strong></p>
 
@@ -221,7 +301,7 @@ Influences Next Perception → LOOP CONTINUES</pre>
           <ul>
             <li>Valid frame 1: "This problem is blocking me" (discouraging, grind mode)</li>
             <li>Valid frame 2: "This problem is an experiment to run" (engaging, experimenter mode)</li>
-            <li>Invalid frame: "This problem doesn't exist" (delusional)</li>
+            <li>Invalid frame: "This problem doesn't exist" (delusional, detached without grounded)</li>
           </ul>
 
           <p>Pick frames that serve you while maintaining reality-testing. The mad scientist is engaged (obsessed with experiments) AND detached (willing to blow it up if data contradicts).</p>
@@ -231,21 +311,43 @@ Influences Next Perception → LOOP CONTINUES</pre>
         <section class="content-section">
           <h2>Part 3: The Mechanism (Where Intervention Happens)</h2>
 
-          <h3>The Frame-Selection Point</h3>
+          <h3><span class="evidence-badge evidence-proven">Proven</span> The Frame-Selection Point</h3>
+
+          <p><em><strong>Meta-awareness + cognitive reappraisal neuroscience</strong></em></p>
 
           <p>Between subconscious filtering and conscious narrative creation, there's a <strong>transition point</strong> where intervention is possible.</p>
 
           <p><strong>What neuroscience shows:</strong></p>
 
           <ol>
-            <li><strong>Meta-awareness can be developed</strong> - Awareness of your own thought processes is trainable, produces observable neural changes, not mystical</li>
+            <li><strong>Meta-awareness (awareness of your own thought processes) can be developed</strong>
+              <ul>
+                <li>Measurable via fMRI (default mode network patterns)</li>
+                <li>Training produces observable neural changes</li>
+                <li>Not mystical - it's executive function development</li>
+              </ul>
+            </li>
 
-            <li><strong>Cognitive reappraisal is distinct from passive observation</strong> - Consciously reframing automatic interpretations recruits different brain regions than passive mindfulness, creates window between automatic response and conscious behavior</li>
+            <li><strong>Cognitive reappraisal (consciously reframing automatic interpretations) is distinct from passive observation</strong>
+              <ul>
+                <li>Recruits prefrontal control regions (DLPFC, VLPFC)</li>
+                <li>Modulates emotional responses in amygdala</li>
+                <li>Creates window between automatic response and conscious behavior</li>
+                <li>Different neural mechanisms than passive mindfulness</li>
+              </ul>
+            </li>
 
-            <li><strong>The frame-selection point is where active intervention happens</strong> - Normally seamless (automatic frame → immediate reaction), through practice you develop awareness at that transition, creating functional space for frame selection</li>
+            <li><strong>The frame-selection point is where active intervention happens</strong>
+              <ul>
+                <li>Normally seamless (automatic frame → immediate reaction)</li>
+                <li>Through practice, you develop awareness at that transition</li>
+                <li>This creates functional space for frame selection</li>
+                <li>Not a discrete "moment" but a process (milliseconds to seconds)</li>
+              </ul>
+            </li>
           </ol>
 
-          <p><em>Research backing: Metacognition and meta-awareness training, cognitive reappraisal neural mechanisms, emotion regulation strategies, mindfulness vs. cognitive therapy distinctions</em></p>
+          <p><em>Research backing: Metacognition and meta-awareness training, cognitive reappraisal neural mechanisms, emotion regulation strategies, mindfulness vs cognitive therapy distinctions, executive function development</em></p>
 
           <p><strong>The critical distinction:</strong></p>
 
@@ -275,32 +377,54 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>Meta-perception = mindfulness for the AI age:</strong></p>
 
-          <p>Traditional mindfulness was designed for simpler information environments. Meta-perception evolved for AI-age complexity—frame saturation, information overload, competing narratives everywhere.</p>
+          <p>Traditional mindfulness was designed for simpler information environments (reduce suffering in stable-frame world). Meta-perception evolved for AI-age complexity - frame saturation, information overload, competing narratives everywhere.</p>
 
-          <p>Not rejection of mindfulness. <strong>Evolution.</strong> Mindfulness established the foundation (awareness at the transition point), meta-perception adds active intervention for more complex environments.</p>
+          <p>Not rejection of mindfulness. <strong>Evolution.</strong> Mindfulness established the foundation (awareness at the transition point), meta-perception adds active intervention for more complex environment.</p>
         </section>
 
         <!-- Attention-Direction Principle -->
         <section class="content-section">
-          <h3>The Attention-Direction Principle</h3>
+          <h3><span class="evidence-badge evidence-proven">Proven</span> The Attention-Direction Principle</h3>
+
+          <p><em><strong>Strongest research backing of all claims</strong></em></p>
 
           <p>What you consciously focus on influences what your subconscious filters for.</p>
 
           <p><strong>This is not metaphorical.</strong> Attention literally changes neural activation patterns:</p>
 
-          <ul>
-            <li>Top-down attention creates feedback loops to early sensory processing regions</li>
-            <li>Attentional training produces measurable neural plasticity (changes brain activity in prefrontal cortex, insula, amygdala)</li>
-            <li>What you pay attention to → subconscious starts filtering for it → loop reinforces over time</li>
-          </ul>
+          <ol>
+            <li><strong>Top-down attention creates feedback loops</strong>
+              <ul>
+                <li>Modulates early sensory processing regions</li>
+                <li>"Warps" perception of visual features</li>
+                <li>Enhances neural representations of attended stimuli</li>
+              </ul>
+            </li>
 
-          <p><em>Research backing: Attention and neural activation (extensive literature), attentional bias modification studies, neural plasticity in attention training</em></p>
+            <li><strong>Attentional bias modification produces measurable neural plasticity</strong>
+              <ul>
+                <li>Changes brain activity in prefrontal cortex, insula, amygdala</li>
+                <li>Alters automatic filtering patterns</li>
+                <li>Effects persist beyond training sessions</li>
+              </ul>
+            </li>
+
+            <li><strong>Conscious focus and subconscious filtering form feedback loop</strong>
+              <ul>
+                <li>What you pay attention to → subconscious starts filtering for it</li>
+                <li>Loop reinforces over time (positive feedback)</li>
+                <li>This creates the mechanism for frame pragmatism to WORK</li>
+              </ul>
+            </li>
+          </ol>
+
+          <p><em>Research backing: Attention and neural activation (extensive literature), attentional bias modification (ABM) studies, top-down vs bottom-up attention mechanisms, neural plasticity in attention training, feature-based attention effects</em></p>
 
           <p><strong>The implication:</strong></p>
 
           <p>Frame selection isn't just mental reframing. When you consciously select a frame (and direct attention accordingly), you're literally rewiring your subconscious filtering patterns through feedback loops.</p>
 
-          <p><strong>This is the mechanism that makes "frames as experiments" powerful:</strong></p>
+          <p><strong>This is the mechanism that makes "frames as experiments" POWERFUL:</strong></p>
 
           <ol>
             <li>Choose frame consciously (for fascination/utility)</li>
@@ -311,38 +435,47 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>Narrative shifts from reactive → experimental</li>
           </ol>
 
-          <p><em>Note: Attention influences but doesn't completely control perception. Effects vary by individual. We're not claiming total control, just meaningful influence.</em></p>
+          <p><strong>Probabilistic, not deterministic:</strong> Attention influences but doesn't completely control perception. Effects vary by individual. This keeps it honest - we're not claiming total control, just meaningful influence.</p>
         </section>
 
         <!-- PART 4: The Practice -->
         <section class="content-section">
           <h2>Part 4: The Practice (How to Do It)</h2>
 
-          <h3>Meta-Perception: The Dual State</h3>
+          <h3><span class="evidence-badge evidence-supported">Supported</span> Meta-Perception: The Dual State</h3>
+
+          <p><em><strong>Decentering research</strong></em></p>
 
           <p>Meta-perception is simultaneous engagement and detachment.</p>
 
-          <p>Research on "decentering" shows people can be "both actors engrossed in unfolding story AND third-person observers of that experience." This is distinguished from dissociation (pathological detachment) by maintained awareness and voluntary control.</p>
+          <p><strong>Decentering research shows:</strong></p>
+          <ul>
+            <li>People can be "both actors engrossed in unfolding story AND third-person observers of that experience"</li>
+            <li>Involves three metacognitive processes: meta-awareness, disidentification from internal experience, reduced reactivity to thought content</li>
+            <li>Distinguished from dissociation (pathological detachment) by maintained awareness + voluntary control</li>
+          </ul>
 
           <p><strong>The mad scientist naturally creates this state:</strong></p>
 
           <p><strong>Engaged Experimenter:</strong></p>
           <ul>
             <li>Obsessed with the work (completely in the moment)</li>
-            <li>Fascinated by what's emerging</li>
-            <li>Building rayguns to test reality</li>
-            <li>Tinkering as legitimate research</li>
+            <li>Fascinated by what's emerging (intrinsic motivation active)</li>
+            <li>Building rayguns to test reality (every project = experimental tool)</li>
+            <li>Tinkering as legitimate research (exploratory processing)</li>
           </ul>
 
           <p><strong>Detached Observer:</strong></p>
           <ul>
-            <li>No fixed frames (willing to blow up theories if data says so)</li>
-            <li>Pure awareness (seeing what's actually happening)</li>
+            <li>No fixed frames (including self - willing to blow up theories if data says so)</li>
+            <li>Pure awareness (seeing what's actually happening, not what you want)</li>
             <li>Evidence-based (following data, not attachment to outcomes)</li>
             <li>Light (not taking yourself too seriously)</li>
           </ul>
 
-          <p><strong>These aren't opposites—they're entangled.</strong> You're obsessed with experiments AND willing to destroy them. Fascinated by emergence AND detached from outcomes. In the moment AND seeing from outside.</p>
+          <p><strong>These aren't opposites - they're entangled.</strong> You're obsessed with experiments AND willing to destroy them. Fascinated by emergence AND detached from outcomes. In the moment AND seeing from outside.</p>
+
+          <p><span class="evidence-badge evidence-extension">Logical Extension</span> Research on decentering→creativity is thinner than decentering→clinical outcomes (anxiety/depression). Link to problem-solving is stronger. We infer creativity connection from related research - honest about this gap.</p>
         </section>
 
         <!-- Making It Effortless -->
@@ -353,7 +486,9 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p>If monitoring feels like work, it won't last. The goal is automatic awareness, not exhausting vigilance.</p>
 
-          <h4>1. Somatic Anchors (Embodied State Triggers)</h4>
+          <h4><span class="evidence-badge evidence-proven">Proven</span> 1. Somatic Anchors (Embodied State Triggers)</h4>
+
+          <p><em><strong>Classical conditioning, embodied cognition research</strong></em></p>
 
           <p>Physical actions that trigger mad scientist state directly.</p>
 
@@ -392,11 +527,13 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>Eventually: cue triggers state automatically</li>
           </ol>
 
-          <p><em>Research backing: Embodied cognition, classical conditioning, state-dependent memory, identity-based behavior change</em></p>
+          <p><em>Research backing: Embodied cognition (Varela, Thompson, Rosch), classical conditioning (Pavlov, modern extensions), state-dependent memory, identity-based behavior change, somatic experiencing</em></p>
 
           <p><strong>This is profoundly more effective than mental checking.</strong> You're not asking "should I be experimenting?" - you're BECOMING the experimenter through embodied state shift.</p>
 
-          <h4>2. Environmental Triggers</h4>
+          <h4><span class="evidence-badge evidence-supported">Supported</span> 2. Environmental Triggers</h4>
+
+          <p><em><strong>Attentional bias, environmental psychology</strong></em></p>
 
           <p>Visual reminders that catch grinding automatically:</p>
 
@@ -411,7 +548,9 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p>Not constant monitoring. Periodic automatic reminders.</p>
 
-          <h4>3. Delegation to Background Awareness</h4>
+          <h4><span class="evidence-badge evidence-supported">Supported</span> 3. Delegation to Background Awareness</h4>
+
+          <p><em><strong>Self-distancing research, IFS, subpersonality models</strong></em></p>
 
           <p>Rather than constant conscious monitoring (exhausting), delegate to background processes.</p>
 
@@ -427,14 +566,19 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>Why external framing helps (research backed):</strong></p>
           <ul>
-            <li>Creates psychological distance (self-distancing research)</li>
-            <li>Accesses different neural networks</li>
-            <li>Bypasses ego resistance</li>
+            <li>Creates psychological distance (self-distancing - Kross et al.)</li>
+            <li>Accesses different neural networks (executive function as meta-process)</li>
+            <li>Bypasses ego resistance (reduces defensiveness)</li>
             <li>More effective than pure rationalism for pattern recognition</li>
             <li>Allows monitoring without exhaustion</li>
           </ul>
 
           <p><strong>Critical nuance:</strong> Not claiming these "entities" are REAL or separate consciousnesses. Using frames that make the mechanism WORK. (Frame pragmatism applied to the system itself!)</p>
+
+          <p><strong>How to establish:</strong></p>
+          <p>"I'm delegating monitoring to [whatever frame works]. When I slip into grind mode, [that part] will notice and flag it for me."</p>
+
+          <p>Then trust it. The intention + attention establishes the pattern. Background awareness develops over time.</p>
 
           <h4>4. The Zero Overhead Principle</h4>
 
@@ -450,7 +594,13 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>The recursion:</strong></p>
 
-          <p>Each time you catch grinding and return to experiments, the pattern reinforces. Detection gets faster, shift becomes easier, eventually becomes automatic background awareness. The loop becomes self-sustaining.</p>
+          <p>Each time you catch grinding and return to experiments, the pattern reinforces:</p>
+          <ul>
+            <li>Detection gets faster</li>
+            <li>Shift becomes easier</li>
+            <li>Eventually becomes automatic background awareness</li>
+            <li>The loop becomes self-sustaining</li>
+          </ul>
 
           <p><strong>You're not maintaining the system. The system maintains itself through use.</strong></p>
         </section>
@@ -479,16 +629,19 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>Feeling stuck → PAUSE → "What would a different frame reveal?"</li>
           </ul>
 
+          <p><strong>Not forcing pauses constantly</strong> (exhausting)<br>
+          <strong>But using them when you notice reactivity</strong> (reactive = usually grind mode)</p>
+
           <p><strong>Frame Pragmatism Application</strong></p>
 
           <p>When multiple valid frames exist:</p>
 
           <ol>
-            <li>Recognize there are multiple frames (sphere metaphor)</li>
-            <li>Don't seek "true" frame (truth = impossible average)</li>
-            <li>Select for fascination/utility (what serves experimentation?)</li>
-            <li>Test experimentally (see what emerges)</li>
-            <li>Switch frames if data contradicts (detachment enables this)</li>
+            <li><strong>Recognize there are multiple frames</strong> (sphere metaphor - different 2D views of 3D reality)</li>
+            <li><strong>Don't seek "true" frame</strong> (truth = impossible average of all views)</li>
+            <li><strong>Select for fascination/utility</strong> (what serves experimentation?)</li>
+            <li><strong>Test experimentally</strong> (see what emerges with this frame)</li>
+            <li><strong>Switch frames if data contradicts</strong> (detached observation enables this)</li>
           </ol>
 
           <p><strong>Treating belief as toy:</strong></p>
@@ -511,64 +664,62 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>What would I notice if I used different filter?</li>
           </ul>
 
-          <p>Over time, attention creates neural patterns that persist (feedback loop—proven mechanism).</p>
+          <p><strong>The function:</strong> Conscious perspective-shifting. You're experimenting with different lenses to see what each reveals. Over time, attention creates neural patterns that persist (feedback loop - proven mechanism).</p>
         </section>
 
         <!-- Operating Principles -->
         <section class="content-section">
           <h3>The Operating Principles (Within Experimental Substrate)</h3>
 
-          <ol>
-            <li><strong>Fascination is signal, not noise</strong>
-              <ul>
-                <li>If fascinated → probably on right track</li>
-                <li>If grinding → probably forcing something</li>
-                <li>Boredom/dread = wrong experiment, not weak willpower</li>
-                <li><strong>Fascination ⟷ Fun</strong> - fascination LEADS, fun follows</li>
-              </ul>
-            </li>
+          <p><strong>1. Fascination is signal, not noise</strong></p>
+          <ul>
+            <li>If you're fascinated, you're probably on right track</li>
+            <li>If you're grinding, you're probably forcing something</li>
+            <li>Boredom/dread = wrong experiment, not weak willpower</li>
+            <li><strong>Fascination ⟷ Fun</strong> - fascination LEADS, fun follows (not the other way)</li>
+          </ul>
 
-            <li><strong>Weird is good</strong>
-              <ul>
-                <li>Tangents often lead somewhere useful</li>
-                <li>"Wasted" time exploring usually pays off</li>
-                <li>Pattern disruption prevents calcification</li>
-              </ul>
-            </li>
+          <p><strong>2. Weird is good</strong></p>
+          <ul>
+            <li>Tangents often lead somewhere useful</li>
+            <li>"Wasted" time exploring usually pays off</li>
+            <li>Pattern disruption prevents calcification</li>
+            <li>Mad scientists try absurd things (frame-switching builds flexibility)</li>
+          </ul>
 
-            <li><strong>Tinkering IS working</strong>
-              <ul>
-                <li>"Fiddling around" = exploration</li>
-                <li>"Messing with ideas" = research</li>
-                <li>Default mode network activates during unstructured thinking (when brain makes connections)</li>
-              </ul>
-            </li>
+          <p><strong>3. Tinkering IS working</strong></p>
+          <ul>
+            <li>"Fiddling around" = exploration</li>
+            <li>"Messing with ideas" = research</li>
+            <li>"Playing with approaches" = experimentation</li>
+            <li>Default mode network activates during unstructured thinking (when brain makes connections)</li>
+          </ul>
 
-            <li><strong>Breakthroughs emerge, aren't forced</strong>
-              <ul>
-                <li>Push when there's momentum</li>
-                <li>Rest when there's resistance</li>
-                <li>Dual state = sustainable engagement</li>
-              </ul>
-            </li>
+          <p><strong>4. Breakthroughs emerge, aren't forced</strong></p>
+          <ul>
+            <li>Push when there's momentum</li>
+            <li>Rest when there's resistance</li>
+            <li>Trust the process (evidence-based trust, not magical thinking)</li>
+            <li>Dual state = sustainable engagement</li>
+          </ul>
 
-            <li><strong>Experiments adapt to energy</strong>
-              <ul>
-                <li>High energy = big experiments</li>
-                <li>Medium energy = focused tinkering</li>
-                <li>Low energy = gentle exploration</li>
-                <li>Depletion = rest (guilt-free)</li>
-              </ul>
-            </li>
+          <p><strong>5. Experiments adapt to energy</strong></p>
+          <ul>
+            <li>High energy = big experiments, ambitious rayguns</li>
+            <li>Medium energy = focused tinkering, refinement</li>
+            <li>Low energy = gentle exploration, observation</li>
+            <li>Depletion = rest (guilt-free, system recovery)</li>
+          </ul>
 
-            <li><strong>Every project is a raygun</strong>
-              <ul>
-                <li>Not "completing tasks"—building experimental tools</li>
-                <li>Each thing you make tests some aspect of reality</li>
-                <li>Rayguns prove or disprove hypotheses</li>
-              </ul>
-            </li>
-          </ol>
+          <p><strong>6. Every project is a raygun</strong></p>
+          <ul>
+            <li>Not "completing tasks" - building experimental tools</li>
+            <li>Each thing you make tests some aspect of reality</li>
+            <li>Protocol Memory = raygun for external memory</li>
+            <li>FlowScript = raygun for topographical language</li>
+            <li>This system = raygun for cognitive architecture</li>
+            <li>Rayguns prove or disprove hypotheses</li>
+          </ul>
         </section>
 
         <!-- Daily Practices -->
@@ -577,15 +728,15 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>Morning: Lab Calibration (10-20 minutes)</strong></p>
           <ul>
-            <li>Walking preferred, sitting acceptable</li>
+            <li>Walking preferred (helps MCAS/nervous system), sitting acceptable</li>
             <li>Low-engagement, observational mode</li>
-            <li>Notice things that catch attention</li>
-            <li>Let thoughts drift without grabbing them</li>
-            <li>Observe with detached fascination</li>
-            <li>Check in with body/energy state</li>
+            <li>Walking and noticing things that catch attention</li>
+            <li>Letting thoughts drift without grabbing them</li>
+            <li>Observing with detached fascination</li>
+            <li>Checking in with body/energy state</li>
           </ul>
 
-          <p><em>Function: Mental clearing + energy calibration. Preparing your experimental apparatus for the day.</em></p>
+          <p><em>Function: Mental clearing + energy calibration. Preparing experimental apparatus (your system) for the day.</em></p>
 
           <p><strong>Throughout Day: The Mad Scientist Check-In</strong></p>
 
@@ -597,7 +748,7 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>Avoiding something? (Start experimenting with it)</li>
           </ul>
 
-          <p><em>Function: Catches when you slip into grind mode, enables course-correction.</em></p>
+          <p><em>Function: Catches when you slip into grind mode, enables course-correction back to experiments.</em></p>
 
           <p><strong>Or use somatic anchor:</strong> Tap fingers → FEEL like mad scientist → state shifts automatically.</p>
 
@@ -606,12 +757,16 @@ Influences Next Perception → LOOP CONTINUES</pre>
           <p>Your analytical superpowers, applied experimentally:</p>
 
           <ul>
-            <li><strong>First principles:</strong> Strip to fundamentals</li>
+            <li><strong>First principles:</strong> Strip to fundamentals, build from bedrock</li>
             <li><strong>Ordered effects:</strong> Trace consequences (1st, 2nd, 3rd+ order)</li>
-            <li><strong>Temporal analysis:</strong> Consider multiple timeframes</li>
+            <li><strong>Temporal analysis:</strong> Consider multiple timeframes (immediate, short, medium, long)</li>
           </ul>
 
-          <p>These are EXPERIMENTAL tools, not grind tools. You're experimenting with understanding, not forcing correct analysis.</p>
+          <p><strong>Key:</strong> These are EXPERIMENTAL tools, not grind tools. You're experimenting with understanding, not forcing correct analysis. Detached observation + engaged fascination.</p>
+
+          <p><strong>When stuck:</strong> "What's actually happening here?" (first principles)<br>
+          <strong>When deciding:</strong> "Then what? Then what? Then what?" (ordered effects)<br>
+          <strong>When planning:</strong> "What works now AND later?" (temporal analysis)</p>
 
           <p><strong>Evidence-Based Iteration</strong></p>
 
@@ -619,11 +774,11 @@ Influences Next Perception → LOOP CONTINUES</pre>
           <ul>
             <li>What felt fascinating? → Keep experimenting</li>
             <li>What felt like grinding? → Change experiment or drop</li>
-            <li>What produced results? → Understand why</li>
+            <li>What produced results? → Understand why (what was hypothesis?)</li>
             <li>What was "productive" but felt awful? → Probably not sustainable</li>
           </ul>
 
-          <p><em>Function: Continuous calibration. Your lab evolves based on what actually works for YOU, not theory.</em></p>
+          <p><em>Function: Continuous calibration. Lab evolves based on what actually works for YOU, not theory. Mad scientists follow data, not dogma.</em></p>
         </section>
 
         <!-- PART 5: The Guide -->
@@ -656,15 +811,23 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>✅ TINKERING FOR THE JOY OF IT</li>
           </ul>
 
-          <p><strong>The mad scientist isn't trying to optimize life—they're trying to PLAY with reality as experimental substrate.</strong></p>
+          <p><strong>The mad scientist isn't trying to optimize life - they're trying to PLAY with reality as experimental substrate.</strong></p>
 
           <p>Some experiments blow up? <strong>That's part of the fun.</strong> You're not seeking perfection or correctness or maximum output. You're seeking ENGAGEMENT. Aliveness. The mischievous joy of tinkering with how things work.</p>
 
           <p><strong>This isn't about productivity.</strong> It's about re-engaging with fascination. Removing the grinding deadness. Getting back to mad scientist mode. Getting back to being ALIVE.</p>
 
-          <p>The fact that this PRODUCES results (Protocol Memory in 3 months, FlowScript in 4 days) is <strong>side effect</strong>, not goal. You build faster in mad scientist mode because you're ENGAGED, not because you're trying to be productive.</p>
+          <p>The fact that this PRODUCES results (PM in 3 months, FlowScript in 4 days, flow system itself) is <strong>side effect</strong>, not goal. You build faster in mad scientist mode because you're ENGAGED, not because you're trying to be productive.</p>
 
           <p><strong>Results emerge from engagement, not grinding.</strong></p>
+
+          <p><strong>The depletion pattern proves it:</strong></p>
+          <ul>
+            <li>Grinding = trying to be productive/successful = depletes</li>
+            <li>Experimenting = engaging with fascination = energizes</li>
+          </ul>
+
+          <p>When operating experimentally, depletion is rarer because you're working WITH your cognitive architecture instead of against it.</p>
 
           <p><strong>The number one prerogative of life should not be maximizing this or that.</strong></p>
 
@@ -680,16 +843,26 @@ Influences Next Perception → LOOP CONTINUES</pre>
           <p><strong>Neuroscience backing:</strong></p>
 
           <ol>
-            <li><strong>Dopamine & exploration</strong> - Experimental mindset releases dopamine, enhances learning/pattern recognition/creative connections</li>
+            <li><strong>Dopamine & exploration</strong> - Experimental mindset releases dopamine, enhances learning/pattern recognition/creative connections. Brain works better when fascinated.</li>
 
-            <li><strong>Default mode network</strong> - Creative/integrative system activates during rest and unstructured thinking</li>
+            <li><strong>Default mode network</strong> - Creative/integrative system activates during rest and unstructured thinking. Tinkering = when brain makes connections.</li>
 
-            <li><strong>Cognitive flexibility</strong> - Experimental framing increases flexibility, rigid execution framing narrows perception</li>
+            <li><strong>Cognitive flexibility</strong> - Experimental framing increases flexibility, allows seeing problems from multiple angles. Rigid execution framing narrows perception.</li>
 
-            <li><strong>Stress & performance</strong> - Chronic stress (grinding) impairs prefrontal cortex, experimental detachment reduces stress</li>
+            <li><strong>Stress & performance</strong> - Chronic stress (grinding) impairs prefrontal cortex. Experimental detachment reduces stress while maintaining engagement.</li>
 
-            <li><strong>Intrinsic motivation</strong> - Fascination generates sustainable motivation, grinding relies on depletable willpower</li>
+            <li><strong>Intrinsic motivation</strong> - Fascination generates intrinsic motivation (sustainable). Grinding relies on willpower (depletable).</li>
           </ol>
+
+          <p><strong>Your personal evidence:</strong></p>
+          <ul>
+            <li>Code Brown: 6 days concept-to-deployed, pure experimentation</li>
+            <li>FlowScript v1.0: Shipped in 4 days, fascinated exploration</li>
+            <li>Protocol Memory: 3 months while working full-time - mad scientist mode</li>
+            <li>PM bug fixes: Fastest when experiments, slowest when grinding</li>
+            <li>Depletion pattern: Always follows extended grinding</li>
+            <li>Recovery pattern: Happens through tinkering and rest, not forced execution</li>
+          </ul>
 
           <p><strong>The data is clear: Engagement and breakthroughs correlate with fascination, not grinding.</strong></p>
         </section>
@@ -700,31 +873,35 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p>Experiments naturally adapt to available energy. <strong>Stop forcing consistent output.</strong></p>
 
-          <h3>High Energy</h3>
-          <p><strong>Feels like:</strong> Buzzing, eager, "let's go"<br>
-          <strong>Experiment mode:</strong> Big messy experiments, ambitious rayguns, wild tangents<br>
-          <strong>Do:</strong> Ride it. Take on complex experiments. Go deep.<br>
-          <strong>Don't:</strong> Waste it on rote tasks.</p>
+          <p><strong>High Energy</strong> (buzzing, eager, "let's go")</p>
+          <ul>
+            <li>Experimenter mode: Big messy experiments, ambitious rayguns, wild tangents</li>
+            <li>Do: Ride it. Take on complex experiments. Go deep. Explore widely.</li>
+            <li>Don't: Waste it on rote tasks. Save easy stuff for low energy.</li>
+          </ul>
 
-          <h3>Medium Energy</h3>
-          <p><strong>Feels like:</strong> Steady, focused, engaged<br>
-          <strong>Experiment mode:</strong> Focused tinkering, incremental progress<br>
-          <strong>Do:</strong> Work on known experiments. Build on progress.<br>
-          <strong>Don't:</strong> Force breakthroughs.</p>
+          <p><strong>Medium Energy</strong> (steady, focused, engaged)</p>
+          <ul>
+            <li>Experimenter mode: Focused tinkering, incremental progress, refinement</li>
+            <li>Do: Work on known experiments. Build on existing progress. Execute clear next steps.</li>
+            <li>Don't: Force breakthroughs. Let them emerge from fascination.</li>
+          </ul>
 
-          <h3>Low Energy</h3>
-          <p><strong>Feels like:</strong> Foggy, slow, but not depleted<br>
-          <strong>Experiment mode:</strong> Gentle exploration, observation<br>
-          <strong>Do:</strong> Easy experiments. Familiar patterns. Reading.<br>
-          <strong>Don't:</strong> Beat yourself up. This is still engagement.</p>
+          <p><strong>Low Energy</strong> (foggy, slow, but not completely depleted)</p>
+          <ul>
+            <li>Experimenter mode: Gentle exploration, observation, light tinkering</li>
+            <li>Do: Easy experiments. Familiar patterns. Reading. Planning. Doodling ideas.</li>
+            <li>Don't: Beat yourself up. This is still engagement - just different tempo.</li>
+          </ul>
 
-          <h3>Depleted</h3>
-          <p><strong>Feels like:</strong> Empty, sludgy, nothing sounds good<br>
-          <strong>Experiment mode:</strong> REST. No experiments. Just recovery.<br>
-          <strong>Do:</strong> Nap. Walk slowly. Stare at things. Recharge.<br>
-          <strong>Don't:</strong> Force productivity.</p>
+          <p><strong>Depleted</strong> (empty, sludgy, nothing sounds fascinating)</p>
+          <ul>
+            <li>Experimenter mode: REST. No experiments. Just recovery.</li>
+            <li>Do: Nap. Walk slowly. Stare at things. Watch something mindless. Let system recharge.</li>
+            <li>Don't: Force productivity. You're not being lazy - you're recharging the experimental apparatus.</li>
+          </ul>
 
-          <p><strong>Key insight:</strong> Depletion usually means you've been grinding too long, not experimenting enough.</p>
+          <p><strong>Key insight:</strong> Depletion usually means you've been grinding too long, not experimenting enough. When operating experimentally, depletion is rarer.</p>
         </section>
 
         <!-- The Meta-Game -->
@@ -733,18 +910,22 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p>You can't make truly hostile emergencies fascinating. But you CAN frame them as lab conditions to work within:</p>
 
-          <p><strong>NOT:</strong> "Make this hostile task fascinating"<br>
-          <strong>BUT:</strong> "Experiment with minimizing its drain on experiment capacity"</p>
+          <p><strong>NOT:</strong> "Make Pressable work enjoyable"<br>
+          <strong>BUT:</strong> "Experiment with minimizing Pressable's drain on lab capacity"</p>
 
           <p><strong>Frame as:</strong></p>
           <ul>
-            <li>Speed-running minimum viable fixes</li>
+            <li>Speed-running minimum viable fixes (optimization experiment)</li>
             <li>Efficiency hypothesis: "What's the LEAST I can do to make this go away?"</li>
-            <li>Energy conservation experiment</li>
-            <li>Pattern recognition: "What's the underlying issue?"</li>
+            <li>Energy conservation experiment: "How do I handle this while preserving capacity for real work?"</li>
+            <li>Pattern recognition: "What's underlying issue causing these emergencies?" (data collection)</li>
           </ul>
 
           <p><strong>The goal:</strong> Dispatch hostile tasks efficiently so you get back to experimenting with what matters.</p>
+
+          <p><strong>NOT grinding through emergencies. EXPERIMENTING with the system to minimize their impact.</strong></p>
+
+          <p>Even hostile work becomes data. What can I learn about efficient dispatch? What patterns emerge? How can I optimize the meta-game?</p>
         </section>
 
         <!-- When You Lose This -->
@@ -755,29 +936,42 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>Warning signs:</strong></p>
           <ul>
-            <li>Work feels like burden, not exploration</li>
-            <li>"Tinkering" triggers guilt</li>
-            <li>You're working harder but getting less done</li>
-            <li>Everything is SERIOUS and IMPORTANT</li>
-            <li>Fascination feels irresponsible</li>
-            <li>You're depleted more often</li>
+            <li>Work feels like burden, not exploration (lost engaged)</li>
+            <li>"Fiddling" triggers guilt (lost permission)</li>
+            <li>You're working harder but getting less done (lost dual state)</li>
+            <li>Everything is SERIOUS and IMPORTANT (lost detachment)</li>
+            <li>Fascination feels irresponsible (lost mad scientist mode)</li>
+            <li>You're depleted more often (grinding, not experimenting)</li>
           </ul>
 
           <p><strong>Return protocol:</strong></p>
+
           <ol>
-            <li><strong>Notice:</strong> "I'm in grind mode"</li>
-            <li><strong>Pause:</strong> Take a breath</li>
+            <li><strong>Notice:</strong> "I'm in grind mode" (detached observation)</li>
+            <li><strong>Pause:</strong> Take a breath (create space at frame-selection point)</li>
             <li><strong>Somatic anchor:</strong> Tap fingers 5x → FEEL like mad scientist</li>
-            <li><strong>Ask:</strong> "What would make this fascinating?"</li>
-            <li><strong>Reframe:</strong> Problem → experiment to run</li>
-            <li><strong>Experiment:</strong> Take one experimental action</li>
+            <li><strong>Ask:</strong> "What would make this fascinating?" (engaged experimenter)</li>
+            <li><strong>Reframe:</strong> Problem → experiment to run (frame pragmatism)</li>
+            <li><strong>Experiment:</strong> Take one experimental action (test new frame)</li>
           </ol>
 
           <p><strong>Or simpler:</strong></p>
+
           <ol>
             <li><strong>Somatic anchor:</strong> Tap fingers → embody mad scientist state</li>
             <li><strong>Act:</strong> Let mischievous experimental energy guide next move</li>
           </ol>
+
+          <p><strong>Example:</strong></p>
+          <ul>
+            <li>Notice: "I'm grinding on this architecture problem"</li>
+            <li>Tap fingers 5x: Feel mischievous, experimental, playful</li>
+            <li>World = playground, problem = toy to tinker with</li>
+            <li>Ask: "What are all the absurd ways I could test this?"</li>
+            <li>Experiment: Sketch three weird approaches, see what's actually interesting</li>
+          </ul>
+
+          <p><strong>The pattern will be:</strong> Experiment → breakthroughs → pressure → grind → depletion → remember experiments → breakthroughs → repeat</p>
 
           <p><strong>Your job:</strong> Shorten the grind cycles by noticing faster. Return to dual state: Obsessed + detached simultaneously.</p>
         </section>
@@ -792,7 +986,7 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>Engagement increases with less grinding</li>
             <li>Depletion is less frequent</li>
             <li>Problems are fascinating instead of oppressive</li>
-            <li>"Tinkering" leads to breakthroughs</li>
+            <li>"Tinkering around" leads to breakthroughs</li>
             <li>Fascination and results correlate</li>
             <li>You maintain dual state (obsessed + detached)</li>
           </ul>
@@ -803,6 +997,8 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>Experiments become avoidance</li>
             <li>Results tank</li>
             <li>Depletion increases</li>
+            <li>You lose detachment (all obsession, burnout)</li>
+            <li>You lose engagement (all detachment, apathy)</li>
           </ul>
 
           <p><strong>Adjust based on actual results, not theory.</strong> Mad scientists follow data.</p>
@@ -813,6 +1009,8 @@ Influences Next Perception → LOOP CONTINUES</pre>
             <li>What produced results?</li>
             <li>When did you slip into grind mode?</li>
             <li>How quickly did you notice and return?</li>
+            <li>What's your energy/depletion pattern?</li>
+            <li>Are you maintaining dual state?</li>
           </ul>
 
           <p><strong>Iterate based on evidence. Keep what works. Drop what doesn't.</strong></p>
@@ -844,7 +1042,7 @@ Influences Next Perception → LOOP CONTINUES</pre>
 
           <p><strong>This is how you work. Don't fight it. Use it.</strong></p>
 
-          <p class="highlight-quote"><em>"Life's a lab. You're the mad scientist. Now go build rayguns."</em></p>
+          <p class="highlight-quote" style="font-style: italic; font-size: 1.25rem; text-align: center; margin: 2rem 0; color: var(--color-burnt-orange);"><em>"Life's a lab. You're the mad scientist. Now go build rayguns."</em></p>
         </section>
 
         <!-- Next Steps -->
@@ -866,10 +1064,54 @@ Influences Next Perception → LOOP CONTINUES</pre>
           <p>That's it. That's the whole thing.</p>
 
           <p>Now go tinker with something fascinating.</p>
+        </section>
 
-          <p class="footer-note"><strong>For experiment-driven minds, builders who tinker naturally, and anyone grinding themselves to death who needs permission to work how their brain actually functions.</strong></p>
+        <!-- Research Confidence Levels -->
+        <section class="content-section">
+          <div class="confidence-section">
+            <h2 style="margin-top: 0; margin-bottom: 1rem;">Research Confidence Levels</h2>
 
-          <p class="footer-note">This model aligns with current neuroscience, cognitive psychology, and philosophy of mind. Framework is grounded in established research. Not claiming everything is conclusively proven—claiming we're not bullshitting, model is grounded, logical consistency is strong, and the evidence supports the direction.</p>
+            <h4><span class="evidence-badge evidence-proven">Proven</span> Extensive empirical backing</h4>
+            <ul>
+              <li>Perception-action loop with feedback</li>
+              <li>Attention-direction principle (strongest evidence)</li>
+              <li>Frame-selection point mechanics (meta-awareness + cognitive reappraisal)</li>
+              <li>Multiple valid perspectives (framing effects)</li>
+              <li>Somatic anchors (classical conditioning, embodied cognition)</li>
+            </ul>
+
+            <h4><span class="evidence-badge evidence-supported">Supported</span> Solid research direction</h4>
+            <ul>
+              <li>Frame pragmatism (constructivist epistemology + pragmatic philosophy)</li>
+              <li>Belief as experimental variable (ACT research + cognitive flexibility)</li>
+              <li>Dual state (decentering research)</li>
+              <li>Environmental triggers (attentional bias)</li>
+              <li>Delegation to background (self-distancing research)</li>
+            </ul>
+
+            <h4><span class="evidence-badge evidence-extension">Logical Extension</span> Inference from related research</h4>
+            <ul>
+              <li>Fascination-driven selection (from utility-based research)</li>
+              <li>Decentering→creativity link (problem-solving stronger, creativity inferred)</li>
+            </ul>
+
+            <p style="margin-top: 1.5rem; margin-bottom: 0;"><strong>This model aligns with current neuroscience, cognitive psychology, and philosophy of mind.</strong> Framework is logically consistent and draws on established research areas. <strong style="color: var(--color-primary-teal);">Mad scientist standard: PASSED ✓</strong></p>
+
+            <p style="margin-bottom: 0;">Not claiming everything is conclusively proven. Claiming: we're not bullshitting, model is grounded, logical consistency is strong, evidence supports the direction.</p>
+          </div>
+        </section>
+
+        <!-- Version History -->
+        <section class="content-section">
+          <div class="version-history">
+            <h2 style="margin-top: 0; margin-bottom: 1rem;">Version History</h2>
+            <ul>
+              <li><strong>v1.0 (Nov 1, 2025):</strong> PLAY OS - Trickster/playful framing</li>
+              <li><strong>v2.0 (Nov 2, 2025):</strong> RAYGUN OS - Mad scientist/experimental framing, dual state emphasis</li>
+              <li><strong>v3.0 (Nov 3, 2025):</strong> Complete cognitive architecture - perception-action loop, frame-selection point, meta-perception as active mindfulness for AI age, full neuroscience backing</li>
+              <li><strong>v3.1 (Nov 3, 2025):</strong> Implementation approaches (somatic anchors, environmental triggers, delegation to background), new opening (experiential), scrubbed productivity trap language (engagement > optimization)</li>
+            </ul>
+          </div>
         </section>
 
         <!-- GitHub Link -->
