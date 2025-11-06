@@ -105,6 +105,20 @@
     body.dark-mode table td {
       border-color: #2d3142 !important;
     }
+
+    /* Theme icon color fixes for visibility */
+    /* Light mode: moon needs dark border/color to stand out on light bg */
+    body:not(.dark-mode) .theme-icon-dark {
+      fill: #6b7280;
+      stroke: #374151;
+      stroke-width: 1.5;
+    }
+
+    /* Dark mode: sun needs yellow/gold color to stand out on dark bg */
+    body.dark-mode .theme-icon-light {
+      fill: #fbbf24;
+      stroke: #fbbf24;
+    }
   </style>
 
 </head>
