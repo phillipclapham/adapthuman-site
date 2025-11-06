@@ -199,20 +199,22 @@
 }
 
 /* Show/hide icons based on theme */
+/* Light mode: show moon (clicking goes to dark) */
 body:not(.dark-mode) .theme-icon-light {
-  display: block;
+  display: none;
 }
 
 body:not(.dark-mode) .theme-icon-dark {
-  display: none;
+  display: block;
 }
 
+/* Dark mode: show sun (clicking goes to light) */
 body.dark-mode .theme-icon-light {
-  display: none;
+  display: block;
 }
 
 body.dark-mode .theme-icon-dark {
-  display: block;
+  display: none;
 }
 
 
