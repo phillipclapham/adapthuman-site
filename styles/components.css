@@ -206,11 +206,18 @@ body:not(.dark-mode) .theme-icon-light {
 
 body:not(.dark-mode) .theme-icon-dark {
   display: block;
+  /* Color fix: moon needs contrast on light background */
+  fill: #6b7280;
+  stroke: #374151;
+  stroke-width: 1.5;
 }
 
 /* Dark mode: show sun (clicking goes to light) */
 body.dark-mode .theme-icon-light {
   display: block;
+  /* Color fix: sun needs warmth/visibility on dark background */
+  fill: #fbbf24;
+  stroke: #fbbf24;
 }
 
 body.dark-mode .theme-icon-dark {
