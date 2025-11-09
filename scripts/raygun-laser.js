@@ -64,8 +64,11 @@
     // Ensure correct gradient for current theme
     updateBeamGradient();
 
-    // Charge-up phase: raygun glows
-    raygunImage.classList.add('charging');
+    // Charge-up phase: raygun glows (skip on mobile to prevent Chrome artifacts)
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile) {
+      raygunImage.classList.add('charging');
+    }
 
     // Fire phase: beam fan fires
     setTimeout(() => {
