@@ -521,6 +521,13 @@ body.dark-mode .brain-target.activated {
   .raygun-divider-section {
     height: 60px;
   }
+
+  /* Disable raygun glow on mobile - prevents GPU filter artifacts */
+  .raygun-image.charging {
+    animation: none;
+    filter: none;
+    transform: none;
+  }
 }
 
 /* Accessibility: Disable for users who prefer reduced motion */
