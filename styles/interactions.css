@@ -694,12 +694,12 @@ body.dark-mode .brain-target.overcharged {
   .brain-target.active {
     animation: none;
     transform: scale(1.18);
-    filter: none; /* Remove persistent glow - causes square artifact on mobile GPU */
+    filter: none !important; /* Remove persistent glow - causes square artifact on Chrome mobile GPU */
   }
 
   /* Remove dark mode glow too */
   body.dark-mode .brain-target.active {
-    filter: none;
+    filter: none !important;
   }
 
   /* No hover effects on mobile (touch doesn't have hover state) */
