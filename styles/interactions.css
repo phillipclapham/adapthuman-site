@@ -523,10 +523,14 @@ body.dark-mode .brain-target.activated {
   }
 
   /* Disable raygun glow on mobile - prevents GPU filter artifacts */
+  /* Force override of animation forwards state with !important */
+  .raygun-image {
+    filter: none !important;
+    transform: none !important;
+  }
+
   .raygun-image.charging {
-    animation: none;
-    filter: none;
-    transform: none;
+    animation: none !important;
   }
 }
 
