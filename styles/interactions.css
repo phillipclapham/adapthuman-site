@@ -525,13 +525,15 @@ body.dark-mode .brain-target.activated {
   }
 
   /* Disable raygun glow on mobile - prevents GPU filter artifacts */
-  /* Redefine animation as no-op - Chrome mobile can run it, but it does nothing */
+  /* COMMENTED OUT - debugging Chrome mobile caching */
+  /*
   @keyframes raygunCharge {
     0%, 100% {
       filter: none;
       transform: none;
     }
   }
+  */
 
   /* Disable beam glow on mobile - SVG polygon filters create artifacts on Chrome Android */
   .laser-beam-fan {
