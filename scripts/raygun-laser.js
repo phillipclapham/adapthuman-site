@@ -97,6 +97,8 @@
    * Activate the brain target - glow and grow (always animate, even on re-activation)
    */
   function activateBrain() {
+    console.log('🧠 activateBrain() called');
+
     // Always run activation animation, even if already activated
     // Remove any existing classes first for clean re-trigger
     brainTarget.classList.remove('activated', 'active');
@@ -109,11 +111,13 @@
     brainTarget.classList.add('activated');
     brainContainer.classList.add('bursting');
     brainActivated = true;
+    console.log('🧠 Brain activated, classes:', brainTarget.classList.toString());
 
     // After activation animation, switch to sustained pulse
     setTimeout(() => {
       brainTarget.classList.remove('activated');
       brainTarget.classList.add('active');
+      console.log('🧠 Brain now active (breathing), classes:', brainTarget.classList.toString());
     }, 800);
 
     // Remove burst class after animation completes
@@ -182,32 +186,52 @@
    * Brain click interaction - synaptic burst (desktop) or overcharge (mobile)
    */
   function setupBrainClick() {
-    if (!brainTarget || !brainContainer) return;
+    console.log('🖱️ setupBrainClick() called');
+    console.log('🖱️ brainTarget:', brainTarget);
+    console.log('🖱️ brainContainer:', brainContainer);
+
+    if (!brainTarget || !brainContainer) {
+      console.error('❌ Brain elements not found!');
+      return;
+    }
 
     let isAnimating = false; // Debounce flag
 
     brainTarget.addEventListener('click', () => {
-      if (isAnimating || !brainActivated) return; // Only works after brain is activated
-      isAnimating = true;
+      console.log('👆 Brain clicked!');
+      console.log('👆 isAnimating:', isAnimating, 'brainActivated:', brainActivated);
 
+      if (isAnimating || !brainActivated) {
+        console.log('❌ Click rejected - isAnimating:', isAnimating, 'brainActivated:', brainActivated);
+        return; // Only works after brain is activated
+      }
+
+      isAnimating = true;
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      console.log('📱 isMobile:', isMobile);
 
       if (isMobile) {
         // Mobile: Overcharge effect
+        console.log('⚡ Mobile overcharge starting');
         brainTarget.classList.add('overcharged');
+        console.log('⚡ Classes after overcharge:', brainTarget.classList.toString());
         setTimeout(() => {
           brainTarget.classList.remove('overcharged');
           isAnimating = false;
         }, 4000);
       } else {
         // Desktop: Synaptic burst effect
+        console.log('💥 Desktop synaptic burst starting');
         brainContainer.classList.add('synaptic-firing');
+        console.log('💥 Container classes:', brainContainer.classList.toString());
         setTimeout(() => {
           brainContainer.classList.remove('synaptic-firing');
           isAnimating = false;
         }, 1200); // 800ms synapses + 400ms buffer
       }
     });
+
+    console.log('✅ Click listener attached');
   }
 
   // Initialize on DOM load
