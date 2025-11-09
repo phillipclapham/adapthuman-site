@@ -725,6 +725,67 @@ body.dark-mode .brain-target.overcharged {
 
 
 /* ==========================================
+   SCROLL REVEALS - Intersection Observer
+   ========================================== */
+
+/* Initial hidden state */
+.reveal-section,
+.reveal-card,
+.reveal-hero {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hero has faster reveal */
+.reveal-hero {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cards have slightly different timing for stagger effect */
+.reveal-card {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Revealed state */
+.reveal-section.revealed,
+.reveal-card.revealed,
+.reveal-hero.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Disable scroll reveals on mobile for performance */
+@media (max-width: 768px) {
+  .reveal-section,
+  .reveal-card,
+  .reveal-hero {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Disable for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .reveal-card,
+  .reveal-hero {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================
    PLACEHOLDER: MAD SCIENTIST MODE
    (Phase 3)
    ========================================== */
