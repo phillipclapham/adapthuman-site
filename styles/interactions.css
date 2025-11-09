@@ -255,11 +255,11 @@ body.dark-mode .brain-target-container::after {
   animation: brainActivate 800ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-/* Brain active state with pulse */
+/* Brain active state with breathing (desktop only) */
 .brain-target.active {
   opacity: 1;
   transform: scale(1.18);
-  animation: brainPulse 3s ease-in-out infinite;
+  animation: brainBreathe 4.5s ease-in-out infinite;
 }
 
 /* Light mode glow */
@@ -356,12 +356,13 @@ body.dark-mode .brain-target.activated {
   }
 }
 
-@keyframes brainPulse {
+/* Breathing animation - organic, living presence */
+@keyframes brainBreathe {
   0%, 100% {
-    transform: scale(1.18);
+    transform: scale(1.16);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.22);
   }
 }
 
@@ -525,6 +526,12 @@ body.dark-mode .brain-target.activated {
   /* Disable beam glow on mobile - SVG polygon filters create artifacts on Chrome Android */
   .laser-beam-fan {
     filter: none !important;
+  }
+
+  /* Disable breathing animation on mobile - keep brain static after activation for performance */
+  .brain-target.active {
+    animation: none;
+    transform: scale(1.18);
   }
 }
 
