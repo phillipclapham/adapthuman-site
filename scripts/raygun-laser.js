@@ -227,7 +227,8 @@
         setTimeout(() => {
           brainContainer.classList.remove('synaptic-firing');
           isAnimating = false;
-        }, 1200); // 800ms synapses + 400ms buffer
+          console.log('💥 Synaptic burst complete');
+        }, 1500); // 800ms synapses + 700ms to see it
       }
     });
 
