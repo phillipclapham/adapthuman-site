@@ -89,6 +89,449 @@ h2 {
 /* Remove these - not using scribbles on pull-quote or hero */
 
 /* ==========================================
+   RAYGUN LASER DIVIDER - Section Separator
+   ========================================== */
+
+/* Dedicated section for raygun + laser divider */
+.raygun-divider-section {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  /* Match hero/about backgrounds for seamless integration */
+  background: var(--bg-secondary);
+}
+
+/* Raygun positioned on left side, facing right */
+.raygun-container {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Brain target positioned on right side where beam ends */
+.brain-target-container {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 157px;
+  height: 150px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Spectrum burst emanation on activation */
+.brain-target-container::before,
+.brain-target-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Light mode spectrum burst */
+.brain-target-container::before {
+  background: radial-gradient(circle,
+    rgba(0, 168, 171, 0.6) 0%,
+    rgba(0, 229, 233, 0.5) 20%,
+    rgba(147, 51, 234, 0.4) 40%,
+    rgba(236, 72, 153, 0.3) 60%,
+    rgba(245, 158, 11, 0.2) 80%,
+    transparent 100%);
+}
+
+.brain-target-container::after {
+  background: radial-gradient(circle,
+    rgba(91, 154, 255, 0.5) 0%,
+    rgba(147, 51, 234, 0.4) 30%,
+    rgba(236, 72, 153, 0.3) 60%,
+    transparent 100%);
+}
+
+/* Dark mode spectrum burst */
+body.dark-mode .brain-target-container::before {
+  background: radial-gradient(circle,
+    rgba(255, 107, 53, 0.6) 0%,
+    rgba(249, 115, 22, 0.5) 20%,
+    rgba(250, 204, 21, 0.4) 40%,
+    rgba(132, 204, 22, 0.3) 60%,
+    rgba(6, 182, 212, 0.2) 80%,
+    transparent 100%);
+}
+
+body.dark-mode .brain-target-container::after {
+  background: radial-gradient(circle,
+    rgba(59, 130, 246, 0.5) 0%,
+    rgba(168, 85, 247, 0.4) 30%,
+    rgba(236, 72, 153, 0.3) 60%,
+    transparent 100%);
+}
+
+/* Trigger burst on brain activation - use container class */
+.brain-target-container.bursting::before {
+  animation: spectrumBurst1 1200ms ease-out forwards;
+}
+
+.brain-target-container.bursting::after {
+  animation: spectrumBurst2 1400ms ease-out 100ms forwards;
+}
+
+@keyframes spectrumBurst1 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  30% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
+  }
+}
+
+@keyframes spectrumBurst2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+  }
+  25% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.2) rotate(180deg);
+  }
+}
+
+.raygun-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+/* Fade in raygun once loaded (prevents flip flash) */
+.raygun-image.loaded {
+  opacity: 0.9;
+}
+
+/* Brain target - always visible, never faded */
+.brain-target {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 1;
+  transition: none;
+  position: relative;
+}
+
+/* Brain loaded state */
+.brain-target.loaded {
+  opacity: 1;
+}
+
+/* Brain activation - beam impact */
+.brain-target.activated {
+  animation: brainActivate 800ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Brain active state with pulse */
+.brain-target.active {
+  opacity: 1;
+  transform: scale(1.18);
+  animation: brainPulse 3s ease-in-out infinite;
+}
+
+/* Light mode glow */
+.brain-target.active {
+  filter: drop-shadow(0 0 12px rgba(0, 168, 171, 0.8))
+          drop-shadow(0 0 24px rgba(0, 168, 171, 0.6))
+          drop-shadow(0 0 36px rgba(125, 217, 86, 0.4));
+}
+
+/* Dark mode glow */
+body.dark-mode .brain-target.active {
+  filter: drop-shadow(0 0 12px rgba(255, 107, 53, 0.8))
+          drop-shadow(0 0 24px rgba(243, 156, 18, 0.6))
+          drop-shadow(0 0 36px rgba(244, 208, 63, 0.4));
+}
+
+/* Mario-style stepped growth animation */
+@keyframes brainActivate {
+  0% {
+    transform: scale(1);
+    filter: none;
+  }
+  20% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(0, 168, 171, 0.4));
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  40% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 16px rgba(0, 168, 171, 0.6));
+  }
+  45% {
+    transform: scale(1.12);
+  }
+  60% {
+    transform: scale(1.22);
+    filter: drop-shadow(0 0 24px rgba(0, 168, 171, 0.8));
+  }
+  65% {
+    transform: scale(1.18);
+  }
+  80% {
+    transform: scale(1.24);
+  }
+  85% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+/* Dark mode activation */
+body.dark-mode .brain-target.activated {
+  animation: brainActivateDark 800ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes brainActivateDark {
+  0% {
+    transform: scale(1);
+    filter: none;
+  }
+  20% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.4));
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  40% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 16px rgba(255, 107, 53, 0.6));
+  }
+  45% {
+    transform: scale(1.12);
+  }
+  60% {
+    transform: scale(1.22);
+    filter: drop-shadow(0 0 24px rgba(255, 107, 53, 0.8));
+  }
+  65% {
+    transform: scale(1.18);
+  }
+  80% {
+    transform: scale(1.24);
+  }
+  85% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+@keyframes brainPulse {
+  0%, 100% {
+    transform: scale(1.18);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Raygun charge-up glow */
+.raygun-image.charging {
+  animation: raygunCharge 300ms ease-out forwards;
+}
+
+@keyframes raygunCharge {
+  0% {
+    filter: drop-shadow(0 0 0 transparent);
+    transform: scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 25px rgba(0, 168, 171, 1)) drop-shadow(0 0 50px rgba(0, 168, 171, 0.6));
+    transform: scale(1.08);
+  }
+}
+
+/* Laser beam as persistent divider line - shoots right from raygun, stops under brain */
+.laser-beam-divider {
+  position: absolute;
+  left: 280px;
+  right: 150px;
+  top: 50%;
+  transform: translateY(-50%) translateY(-3px);
+  width: calc(100% - 430px);
+  height: 100px;
+  pointer-events: none;
+  z-index: 10;
+  overflow: visible;
+}
+
+/* Single fan beam - simple and performant */
+.laser-beam-fan {
+  opacity: 0;
+  transform-origin: left center;
+  /* Light glow - single drop-shadow for performance */
+  filter: drop-shadow(0 0 8px rgba(0, 168, 171, 0.6))
+          drop-shadow(0 0 16px rgba(0, 168, 171, 0.4));
+}
+
+/* Fire animation - scale from origin point */
+.laser-beam-fan.firing {
+  animation: laserFanFire 1000ms cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Visible state after firing */
+.laser-beam-fan.visible {
+  opacity: 0.9;
+  transform: scaleX(1);
+}
+
+/* Retract animation */
+.laser-beam-fan.retracting {
+  animation: laserFanRetract 600ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes laserFanFire {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  10% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes laserFanRetract {
+  0% {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes laserFire {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+}
+
+/* Retract animation - all beam layers */
+.laser-beam-core.retracting,
+.laser-beam-spread.retracting,
+.laser-beam-persistent.retracting {
+  animation: laserRetract 600ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes laserRetract {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+  100% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+}
+
+/* Responsive: Adjust sizing on tablets */
+@media (max-width: 1024px) {
+  .raygun-container {
+    width: 150px;
+    height: 150px;
+    left: 40px;
+  }
+
+  .brain-target-container {
+    width: 120px;
+    height: 115px;
+    right: 40px;
+  }
+
+  .laser-beam-divider {
+    left: 190px;
+    right: 100px;
+    width: calc(100% - 290px);
+  }
+}
+
+/* Responsive: Keep visible on mobile - doesn't block content */
+@media (max-width: 768px) {
+  .raygun-container {
+    width: 100px;
+    height: 100px;
+    left: 20px;
+  }
+
+  .brain-target-container {
+    width: 80px;
+    height: 77px;
+    right: 20px;
+  }
+
+  .laser-beam-divider {
+    left: 120px;
+    right: 60px;
+    width: calc(100% - 180px);
+  }
+
+  .raygun-divider-section {
+    height: 60px;
+  }
+}
+
+/* Accessibility: Disable for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .raygun-divider-section {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================
    PLACEHOLDER: MAD SCIENTIST MODE
    (Phase 3)
    ========================================== */

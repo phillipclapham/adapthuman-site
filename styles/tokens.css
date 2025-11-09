@@ -75,6 +75,11 @@
   --overlay-bg: rgba(0, 0, 0, 0.7);
   --overlay-light: rgba(0, 0, 0, 0.5);
 
+  /* Laser beam gradient colors (light mode: cool teal → bright cyan → warm gold) */
+  --beam-gradient-start: #008c8f;
+  --beam-gradient-mid: #00e5e9;
+  --beam-gradient-end: #D4AF37;
+
   /* ==================== SPACING ==================== */
   /* 4px base scale - proven in PM */
 
@@ -292,6 +297,11 @@ body.dark-mode {
   /* Special colors */
   --overlay-bg: rgba(0, 0, 0, 0.8);
   --overlay-light: rgba(0, 0, 0, 0.6);
+
+  /* Laser beam gradient colors (dark mode: vibrant orange → orange-red → bright gold) */
+  --beam-gradient-start: #FF6B35;
+  --beam-gradient-mid: #F4A261;
+  --beam-gradient-end: #E5C158;
 
   /* ==================== SHADOWS (DARK MODE) ==================== */
   /* More pronounced shadows for depth in dark mode */

@@ -87,6 +87,44 @@
       </div>
     </section>
 
+    <!-- Raygun Laser Divider -->
+    <div class="raygun-divider-section">
+      <div class="raygun-container">
+        <img src="assets/images/raygun_original_clear.png" alt="" class="raygun-image" aria-hidden="true">
+      </div>
+
+      <svg class="laser-beam-divider" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true" style="overflow: visible;">
+        <!-- Spectrum gradient definitions - theme-reactive via CSS variables -->
+        <defs>
+          <!-- Light mode: Cool water spectrum - deep teal → teal → cyan → aqua -->
+          <linearGradient id="beamGradientLight" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color: #004d4f" />
+            <stop offset="33%" style="stop-color: #006b6d" />
+            <stop offset="66%" style="stop-color: #00a8ab" />
+            <stop offset="100%" style="stop-color: #00e5e9" />
+          </linearGradient>
+
+          <!-- Dark mode: Fire spectrum - deep red → orange → amber → gold -->
+          <linearGradient id="beamGradientDark" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color: #991b1b" />
+            <stop offset="33%" style="stop-color: #ea580c" />
+            <stop offset="66%" style="stop-color: #f59e0b" />
+            <stop offset="100%" style="stop-color: #fbbf24" />
+          </linearGradient>
+        </defs>
+
+        <!-- Single fan-shaped beam - curated spread, 60% width -->
+        <polygon points="0,10 100,4 100,16"
+                 class="laser-beam-fan"
+                 fill="url(#beamGradientLight)" />
+      </svg>
+
+      <!-- Brain target - cognitive infrastructure activation -->
+      <div class="brain-target-container">
+        <img src="assets/images/brain.png" alt="" class="brain-target" aria-hidden="true">
+      </div>
+    </div>
+
     <!-- About Section -->
     <section id="about" class="section section-about">
       <div class="container">
@@ -386,6 +424,9 @@
 
   <!-- Theme Toggle Script -->
   <script src="scripts/theme.js"></script>
+
+  <!-- Raygun Laser Beam Animation -->
+  <script src="scripts/raygun-laser.js"></script>
 
   <!-- Principle Network Interactions -->
   <script src="scripts/principle-network.js"></script>
