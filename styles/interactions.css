@@ -523,14 +523,12 @@ body.dark-mode .brain-target.activated {
   }
 
   /* Disable raygun glow on mobile - prevents GPU filter artifacts */
-  /* Force override of animation forwards state with !important */
-  .raygun-image {
-    filter: none !important;
-    transform: none !important;
-  }
-
-  .raygun-image.charging {
-    animation: none !important;
+  /* Redefine animation as no-op - Chrome mobile can run it, but it does nothing */
+  @keyframes raygunCharge {
+    0%, 100% {
+      filter: none;
+      transform: none;
+    }
   }
 }
 
