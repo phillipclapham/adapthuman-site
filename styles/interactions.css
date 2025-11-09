@@ -243,6 +243,7 @@ body.dark-mode .brain-target-container::after {
   opacity: 1;
   transition: none;
   position: relative;
+  cursor: pointer;
 }
 
 /* Brain loaded state */
@@ -394,6 +395,132 @@ body.dark-mode .brain-target.activated {
   50% {
     transform: scale(1.26);
   }
+}
+
+/* ==========================================
+   SYNAPTIC BURST - Click effect (Desktop)
+   ========================================== */
+
+/* Synaptic burst SVG overlay */
+.synaptic-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Individual synapse lines - hidden by default */
+.synapse {
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0;
+  stroke-dasharray: 90;
+  stroke-dashoffset: 90;
+}
+
+/* Light mode synapse colors */
+.synapse {
+  stroke: rgba(0, 168, 171, 0.9);
+  filter: drop-shadow(0 0 4px rgba(0, 168, 171, 0.8));
+}
+
+/* Dark mode synapse colors */
+body.dark-mode .synapse {
+  stroke: rgba(255, 107, 53, 0.9);
+  filter: drop-shadow(0 0 4px rgba(255, 107, 53, 0.8));
+}
+
+/* Burst animation - synapses fire outward */
+@keyframes synapseFire {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 90;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Brain rapid breathing during burst */
+@keyframes brainBurst {
+  0%, 100% {
+    transform: scale(1.12);
+  }
+  50% {
+    transform: scale(1.28);
+  }
+}
+
+/* Triggered state - synaptic burst active */
+.brain-target-container.bursting .synaptic-burst {
+  opacity: 1;
+}
+
+.brain-target-container.bursting .synapse {
+  animation: synapseFire 800ms ease-out forwards;
+}
+
+/* Stagger synapse firing with delays */
+.brain-target-container.bursting .synapse-1 { animation-delay: 0ms; }
+.brain-target-container.bursting .synapse-2 { animation-delay: 50ms; }
+.brain-target-container.bursting .synapse-3 { animation-delay: 100ms; }
+.brain-target-container.bursting .synapse-4 { animation-delay: 150ms; }
+.brain-target-container.bursting .synapse-5 { animation-delay: 200ms; }
+.brain-target-container.bursting .synapse-6 { animation-delay: 250ms; }
+.brain-target-container.bursting .synapse-7 { animation-delay: 300ms; }
+.brain-target-container.bursting .synapse-8 { animation-delay: 350ms; }
+
+/* Brain rapid breathing during synaptic burst */
+.brain-target-container.bursting .brain-target.active {
+  animation: brainBurst 1.5s ease-in-out 3 !important;
+}
+
+/* ==========================================
+   OVERCHARGE - Click effect (Mobile)
+   ========================================== */
+
+/* Overcharge state - brain goes supernova */
+.brain-target.overcharged {
+  animation: brainOvercharge 4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+@keyframes brainOvercharge {
+  0% {
+    transform: scale(1.18);
+  }
+  15% {
+    transform: scale(1.65);
+  }
+  30% {
+    transform: scale(1.55);
+  }
+  45% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+/* Overcharge glow - white hot center radiating to spectrum */
+.brain-target.overcharged {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1))
+          drop-shadow(0 0 40px rgba(0, 168, 171, 1))
+          drop-shadow(0 0 60px rgba(125, 217, 86, 0.8)) !important;
+}
+
+body.dark-mode .brain-target.overcharged {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1))
+          drop-shadow(0 0 40px rgba(255, 107, 53, 1))
+          drop-shadow(0 0 60px rgba(244, 208, 63, 0.8)) !important;
 }
 
 /* Raygun charge-up glow (desktop only - JS skips on mobile) */
@@ -576,6 +703,11 @@ body.dark-mode .brain-target.activated {
     filter: drop-shadow(0 0 12px rgba(255, 107, 53, 0.8))
             drop-shadow(0 0 24px rgba(243, 156, 18, 0.6))
             drop-shadow(0 0 36px rgba(244, 208, 63, 0.4));
+  }
+
+  /* Hide synaptic burst SVG on mobile (desktop only effect) */
+  .synaptic-burst {
+    display: none;
   }
 }
 

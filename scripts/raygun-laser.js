@@ -178,16 +178,50 @@
     });
   }
 
+  /**
+   * Brain click interaction - synaptic burst (desktop) or overcharge (mobile)
+   */
+  function setupBrainClick() {
+    if (!brainTarget || !brainContainer) return;
+
+    let isAnimating = false; // Debounce flag
+
+    brainTarget.addEventListener('click', () => {
+      if (isAnimating || !brainActivated) return; // Only works after brain is activated
+      isAnimating = true;
+
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+      if (isMobile) {
+        // Mobile: Overcharge effect
+        brainTarget.classList.add('overcharged');
+        setTimeout(() => {
+          brainTarget.classList.remove('overcharged');
+          isAnimating = false;
+        }, 4000);
+      } else {
+        // Desktop: Synaptic burst effect
+        brainContainer.classList.add('bursting');
+        setTimeout(() => {
+          brainContainer.classList.remove('bursting');
+          isAnimating = false;
+        }, 1200); // 800ms synapses + 400ms buffer
+      }
+    });
+  }
+
   // Initialize on DOM load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       fireOnPageLoad();
       setupThemeToggle();
+      setupBrainClick();
     });
   } else {
     // DOM already loaded
     fireOnPageLoad();
     setupThemeToggle();
+    setupBrainClick();
   }
 
 })();
