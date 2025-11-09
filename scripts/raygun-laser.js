@@ -201,9 +201,9 @@
         }, 4000);
       } else {
         // Desktop: Synaptic burst effect
-        brainContainer.classList.add('bursting');
+        brainContainer.classList.add('synaptic-firing');
         setTimeout(() => {
-          brainContainer.classList.remove('bursting');
+          brainContainer.classList.remove('synaptic-firing');
           isAnimating = false;
         }, 1200); // 800ms synapses + 400ms buffer
       }
