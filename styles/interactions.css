@@ -530,6 +530,11 @@ body.dark-mode .brain-target.activated {
       transform: none;
     }
   }
+
+  /* Disable beam glow on mobile - SVG polygon filters create artifacts on Chrome Android */
+  .laser-beam-fan {
+    filter: none !important;
+  }
 }
 
 /* Accessibility: Disable for users who prefer reduced motion */
