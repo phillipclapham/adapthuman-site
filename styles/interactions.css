@@ -244,6 +244,7 @@ body.dark-mode .brain-target-container::after {
   transition: none;
   position: relative;
   cursor: pointer;
+  pointer-events: auto; /* Override parent's pointer-events: none */
 }
 
 /* Brain loaded state */
