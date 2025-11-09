@@ -365,7 +365,8 @@ body.dark-mode .brain-target.activated {
   }
 }
 
-/* Raygun charge-up glow */
+/* Raygun charge-up glow - DISABLED FOR DEBUGGING CHROME MOBILE ARTIFACTS */
+/*
 .raygun-image.charging {
   animation: raygunCharge 300ms ease-out forwards;
 }
@@ -380,6 +381,7 @@ body.dark-mode .brain-target.activated {
     transform: scale(1.08);
   }
 }
+*/
 
 /* Laser beam as persistent divider line - shoots right from raygun, stops under brain */
 .laser-beam-divider {
