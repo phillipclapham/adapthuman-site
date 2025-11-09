@@ -154,6 +154,21 @@
   .btn:hover {
     transform: none;
   }
+
+  /* Disable hero animations */
+  .hero-name {
+    animation: none;
+    background: var(--text-primary);
+    -webkit-text-fill-color: var(--text-primary);
+  }
+
+  .word-glow {
+    transition: none;
+  }
+
+  .word-glow:hover {
+    text-shadow: none;
+  }
 }
 
 
@@ -457,17 +472,44 @@ body.dark-mode .theme-icon-dark {
   font-size: var(--text-6xl);
   font-weight: var(--font-extrabold);
   margin-bottom: var(--space-4);
-  /* Subtle gold gradient for kintsugi touch */
+  /* Animated shimmer gradient - subtle gold/red sweep (light mode) */
   background: linear-gradient(
     135deg,
     var(--text-primary) 0%,
-    var(--text-primary) 70%,
-    var(--color-gold) 100%
+    var(--text-primary) 42%,
+    var(--color-gold) 48%,
+    #ef4444 52%,
+    var(--text-primary) 58%,
+    var(--text-primary) 100%
   );
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: var(--tracking-tight);
+  animation: shimmer 15s ease-in-out infinite;
+}
+
+/* Dark mode: Blue → Purple shimmer */
+body.dark-mode .hero-name {
+  background: linear-gradient(
+    135deg,
+    var(--text-primary) 0%,
+    var(--text-primary) 42%,
+    #3b82f6 48%,
+    #a855f7 52%,
+    var(--text-primary) 58%,
+    var(--text-primary) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .hero-tagline {
@@ -476,6 +518,41 @@ body.dark-mode .theme-icon-dark {
   color: var(--text-secondary);
   margin-bottom: var(--space-6);
   line-height: var(--line-relaxed);
+}
+
+/* Word-by-word hover glow - subtle interactive delight */
+.word-glow {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 2px;
+}
+
+/* Light mode: Teal glow */
+.word-glow:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 16px rgba(0, 168, 171, 0.9),
+               0 0 32px rgba(0, 168, 171, 0.6),
+               0 0 48px rgba(0, 168, 171, 0.4);
+}
+
+/* Dark mode: Orange/amber glow */
+body.dark-mode .word-glow:hover {
+  color: #ff6b35;
+  text-shadow: 0 0 16px rgba(255, 107, 53, 0.9),
+               0 0 32px rgba(243, 156, 18, 0.6),
+               0 0 48px rgba(244, 208, 63, 0.4);
+}
+
+/* Disable word glow on mobile (touch doesn't have accurate hover) */
+@media (max-width: 768px) {
+  .word-glow {
+    pointer-events: none;
+  }
+
+  .word-glow:hover {
+    text-shadow: none;
+  }
 }
 
 .hero-philosophy {
