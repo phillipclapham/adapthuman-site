@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAYGUN OS is the cognitive operating system behind everything we build at Adaptive Human. A complete architecture for experiment-driven minds.">
+  <title>Our Framework - Adaptive Human</title>
+
+  <!-- Canonical points to raygunos.com as the authoritative source -->
+  <link rel="canonical" href="https://raygunos.com/framework.html">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/images/raygun_original_clear.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/raygun_original_clear 16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/raygun_original_clear 32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/raygun_original_clear 48x48.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="assets/images/raygun_original_clear 48x48.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/tokens.css?v=3">
+  <link rel="stylesheet" href="styles/base.css?v=3">
+  <link rel="stylesheet" href="styles/components.css?v=3">
+  <link rel="stylesheet" href="styles/main.css?v=3">
+  <link rel="stylesheet" href="styles/interactions.css?v=4">
+
+  <!-- Theme Script (inline to prevent FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header with Theme Toggle -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-main">
+        <a href="/" class="logo">Adaptive Human</a>
+        <div class="nav-actions">
+          <a href="/framework" class="nav-link">Framework</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="#F4E5B0" stroke="none">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-name">Our Framework</h1>
+          <p class="hero-tagline">The cognitive operating system behind everything we build.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+      <div class="container">
+        <div class="section-content" style="max-width: 800px; margin: 0 auto;">
+
+          <!-- What RAYGUN Is -->
+          <div style="margin-bottom: 4rem;">
+            <h2>What is RAYGUN OS?</h2>
+            <p><strong>RAYGUN OS is the complete cognitive architecture behind everything we build</strong>—Protocol Memory, FlowScript, this site itself. It's not a productivity tool or self-help system. It's an operating system for experiment-driven minds.</p>
+
+            <p>Built from 45 years of experiments with constraints, ADHD, mast cell disease, and the question: <em>what if grinding is the problem, not the solution?</em></p>
+
+            <p>The framework turns your mind into a laboratory. Every project becomes an experiment. Every frame becomes testable. You maintain dual state: completely engaged in the work (obsessed) while remaining detached from outcomes (willing to blow it up if the data says so).</p>
+
+            <p>Most cognitive frameworks teach you to "fix" your brain or optimize yourself into someone else's shape. RAYGUN teaches you to <strong>use how your brain actually works</strong> as the competitive advantage.</p>
+          </div>
+
+          <!-- Why It Matters -->
+          <div style="margin-bottom: 4rem;">
+            <h2>Why It Matters for What We Build</h2>
+            <p>This isn't marketing. <strong>RAYGUN is literally how the work gets done:</strong></p>
+
+            <ul style="margin: 1.5rem 0;">
+              <li><strong>Protocol Memory's architecture?</strong> Built using RAYGUN principles. The entire system is an experiment in external memory that preserves personality.</li>
+              <li><strong>FlowScript's design?</strong> Shipped v1.0 in 4 days through mad scientist mode—treating language design as rapid experimentation, not careful planning.</li>
+              <li><strong>This website?</strong> Every interaction, every design decision, filtered through frame flexibility and evidence-based iteration.</li>
+            </ul>
+
+            <p>When we say "we operate using RAYGUN OS," we mean it literally. The products we build emerge <em>from</em> the framework. They're proof the architecture works at production scale.</p>
+
+            <blockquote class="pull-quote" style="margin: 2rem 0;">
+              The best way to validate a cognitive architecture? Build real products with it and see if they ship.
+            </blockquote>
+          </div>
+
+          <!-- Core Principles Preview -->
+          <div style="margin-bottom: 4rem;">
+            <h2>Core Principles (Preview)</h2>
+            <p style="margin-bottom: 2rem;">The complete framework is 18,000 words and lives at its own home (raygunos.com). Here's a preview of the architecture:</p>
+
+            <div class="principles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0;">
+
+              <div class="principle-card">
+                <h3>Meta-Perception</h3>
+                <p>Watching yourself think at the moment frames form. The gap where agency lives—between stimulus and response, between data and interpretation.</p>
+                <a href="https://raygunos.com/framework#part0" class="link-external" target="_blank" rel="noopener">Explore Part 0 →</a>
+              </div>
+
+              <div class="principle-card">
+                <h3>Frame Flexibility</h3>
+                <p>Reality doesn't change when you change frames. Your experience of it does. Frames as experiments you can run, test, and swap based on results.</p>
+                <a href="https://raygunos.com/framework#part2" class="link-external" target="_blank" rel="noopener">Explore Part 2 →</a>
+              </div>
+
+              <div class="principle-card">
+                <h3>Dual State</h3>
+                <p>Holding two contradictory states simultaneously: Engaged Experimenter (obsessed with the work) and Detached Observer (willing to blow it up).</p>
+                <a href="https://raygunos.com/framework#part4" class="link-external" target="_blank" rel="noopener">Explore Part 4 →</a>
+              </div>
+
+              <div class="principle-card">
+                <h3>Evidence Over Aspiration</h3>
+                <p>Labs need data. Track what works, keep the signal, drop the bullshit. If it produces results you value, keep it. If it doesn't, drop it.</p>
+                <a href="https://raygunos.com/framework#part5" class="link-external" target="_blank" rel="noopener">Explore Part 5 →</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- The Complete Framework CTA -->
+          <div style="text-align: center; margin: 5rem 0;">
+            <h2 style="margin-bottom: 1rem;">The Complete Framework</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+              RAYGUN OS is open-source, freely available, and independent. The complete 18,000-word cognitive architecture lives at its own home:
+            </p>
+            <a href="https://raygunos.com" class="btn btn-primary" style="font-size: 1.25rem; padding: 1rem 2.5rem;" target="_blank" rel="noopener">
+              Explore RAYGUN OS at raygunos.com →
+            </a>
+          </div>
+
+          <!-- Provenance -->
+          <div style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--color-border);">
+            <h2>Provenance</h2>
+            <p>RAYGUN OS was built by <a href="https://phillipclapham.com" class="link-external" target="_blank" rel="noopener">Phillip Clapham</a> over 45 years of experiments with ADHD, chronic illness, and the constraints that forced radical rethinking of how minds can work.</p>
+
+            <p>What started as survival strategies became a complete cognitive architecture. What worked in crisis worked everywhere. The framework is now open-source and available to anyone whose brain runs on experiments.</p>
+
+            <p style="margin-top: 2rem;"><strong>Part of the Adaptive Human ecosystem.</strong> Same DNA, independent value.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-brand">Adaptive Human</p>
+        <p class="footer-tagline">Cognitive infrastructure for the AI age</p>
+        <div class="footer-links">
+          <a href="https://phillipclapham.com" target="_blank" rel="noopener">phillipclapham.com</a>
+          <a href="https://raygunos.com" target="_blank" rel="noopener">RAYGUN OS</a>
+          <a href="https://github.com/phillipclapham" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="footer-copyright">© 2025 Adaptive Human. Building rayguns.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/experiment-orbs.js"></script>
+
+</body>
+</html>
