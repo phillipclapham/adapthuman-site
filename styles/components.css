@@ -135,6 +135,22 @@
   box-shadow: none;
 }
 
+/* Large button variant - bigger text and padding */
+.btn-large {
+  font-size: 1.25rem;
+  padding: 1rem 2.5rem;
+}
+
+/* Mobile: Reduce btn-large size to prevent overflow */
+@media (max-width: 768px) {
+  .btn-large {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+    white-space: normal; /* Allow text wrapping if needed */
+    text-align: center;
+  }
+}
+
 /* Accessibility: Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .btn,
