@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy for Adaptive Human apps including Video Poker Edge and Blackjack Edge. We collect zero data.">
+  <title>Privacy Policy - Adaptive Human</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/images/raygun_original_clear.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/raygun_original_clear 16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/raygun_original_clear 32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/raygun_original_clear 48x48.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="assets/images/raygun_original_clear 48x48.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/tokens.css?v=3">
+  <link rel="stylesheet" href="styles/base.css?v=3">
+  <link rel="stylesheet" href="styles/components.css?v=4">
+  <link rel="stylesheet" href="styles/main.css?v=3">
+  <link rel="stylesheet" href="styles/interactions.css?v=4">
+
+  <!-- Plausible Analytics -->
+  <script defer data-domain="adapthuman.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+
+  <!-- Theme Script (inline to prevent FOUC) -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header with Theme Toggle -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-main">
+        <a href="/" class="logo">Adaptive Human</a>
+        <div class="nav-actions">
+          <a href="/framework" class="nav-link">Framework</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="#F4E5B0" stroke="none">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-name">Privacy Policy</h1>
+          <p class="hero-tagline">We collect zero data. Seriously.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+      <div class="container">
+        <div class="section-content" style="max-width: 800px; margin: 0 auto;">
+
+          <!-- Scope -->
+          <div style="margin-bottom: 3rem;">
+            <h2>Apps Covered</h2>
+            <p>This privacy policy applies to all Adaptive Human mobile applications, including:</p>
+            <ul>
+              <li><strong>Video Poker Edge</strong> - Video poker strategy trainer</li>
+              <li><strong>Blackjack Edge</strong> - Blackjack strategy trainer</li>
+            </ul>
+          </div>
+
+          <!-- The Core Message -->
+          <div style="margin-bottom: 3rem;">
+            <h2>What We Don't Collect</h2>
+            <p>Our apps do not collect, store, or transmit any personal data. Period.</p>
+            <ul>
+              <li>No accounts or sign-ups required</li>
+              <li>No analytics or usage tracking</li>
+              <li>No advertising or ad tracking</li>
+              <li>No network connections to external servers</li>
+              <li>No third-party data sharing</li>
+              <li>No crash reporting that includes personal data</li>
+            </ul>
+            <p>We have no servers. We receive no data from you whatsoever.</p>
+          </div>
+
+          <!-- Local Storage -->
+          <div style="margin-bottom: 3rem;">
+            <h2>How Your Data Is Stored</h2>
+            <p>All game progress, statistics, and settings are stored <strong>locally on your device only</strong> using standard app storage (AsyncStorage on mobile platforms).</p>
+            <p>This data never leaves your device. When you delete the app, this data is deleted with it.</p>
+          </div>
+
+          <!-- Updates -->
+          <div style="margin-bottom: 3rem;">
+            <h2>Updates to This Policy</h2>
+            <p>If we ever change our data practices (we don't anticipate this), we will update this policy and the "Last Updated" date below.</p>
+          </div>
+
+          <!-- Contact -->
+          <div style="margin-bottom: 3rem;">
+            <h2>Questions?</h2>
+            <p>If you have questions about this privacy policy, contact us at <a href="mailto:privacy@adapthuman.com">privacy@adapthuman.com</a>.</p>
+          </div>
+
+          <!-- Last Updated -->
+          <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+            <p style="color: var(--text-tertiary); font-size: 0.875rem;"><strong>Last Updated:</strong> January 2026</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Adaptive Human. Building cognitive infrastructure for the AI age.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/theme.js"></script>
+
+</body>
+</html>
